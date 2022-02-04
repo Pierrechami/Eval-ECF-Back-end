@@ -2,41 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a7be17-5dac-441b-9805-5be3b1759b25" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220204073126.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220204073746.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220204074117.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220204074406.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220204074750.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220204074918.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220204082328.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220204082524.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220204083258.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220204090351.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ACCUEIL/HomePageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ENREGISTREMENT/RegistrationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/LOGIN/LoginController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Candidate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Consultant.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Job.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Recruiter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/AdminRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/CandidateRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ConsultantRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/JobRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/RecruiterRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home_page/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/login/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diagramme/diagramme UML.png" beforeDir="false" afterPath="$PROJECT_DIR$/../diagramme/diagramme UML.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20220204112820.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/CONSULTANT/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,6 +166,8 @@
       <updated>1643965033596</updated>
       <workItem from="1643965039251" duration="5028000" />
       <workItem from="1643971498298" duration="1752000" />
+      <workItem from="1643973393449" duration="4090000" />
+      <workItem from="1643977889000" duration="6366000" />
     </task>
     <servers />
   </component>
