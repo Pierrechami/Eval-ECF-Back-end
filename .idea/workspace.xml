@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8a19ec8-d10a-4db6-9e0a-ac8348fd48f9" name="Changes" comment="" />
+    <list default="true" id="c8a19ec8-d10a-4db6-9e0a-ac8348fd48f9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204073126.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204073746.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204074117.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204074406.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204074750.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204074918.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204082328.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204082524.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204083258.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Controller/HomePageController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Controller/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Entity/Admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Entity/Candidate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Entity/Consultant.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Entity/Job.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Entity/Recruiter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Entity/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Repository/AdminRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Repository/CandidateRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Repository/ConsultantRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Repository/JobRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Repository/RecruiterRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Repository/UserRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/templates/home_page/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TRT-Conseil/templates/login/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TRT-Conseil/.env" beforeDir="false" afterPath="$PROJECT_DIR$/TRT-Conseil/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TRT-Conseil/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/TRT-Conseil/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TRT-Conseil/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/TRT-Conseil/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TRT-Conseil/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/TRT-Conseil/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TRT-Conseil/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/TRT-Conseil/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diagramme/diagramme UML.png" beforeDir="false" afterPath="$PROJECT_DIR$/diagramme/diagramme UML.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/TRT-Conseil/.env.local" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -38,6 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1643794242257</updated>
       <workItem from="1643794248495" duration="741000" />
+      <workItem from="1643808052448" duration="6780000" />
     </task>
     <servers />
   </component>
