@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register consultant{% endblock %}
+
+{% block body %}
+    <h1>Avant de continuer, compléter les informations du consultant</h1>
+
+    {{ form_start(registrationFormConsultant) }}
+    {{ form_row(registrationFormConsultant.first_name) }}
+    {{ form_row(registrationFormConsultant.name) }}
+    Merci de bien vouloir revalider l'adresse mail du consultant précedement créer
+    {{ form_row(registrationFormConsultant.user , {
+        label: 'Utilisateur concerné :'
+    }) }}
+
+    <button type="submit" class="btn">Enregister</button>
+
+    {{ form_end(registrationFormConsultant) }}
+
+
+{% endblock %}

@@ -2,16 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a7be17-5dac-441b-9805-5be3b1759b25" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220204112820.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/CONSULTANT/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ADMIN/AdminController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ADMIN/ConsultantController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/CANDIDAT/CandidatController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/RECRUITEUR/RecruiterController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/CandidatType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ConsultantType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/RecruiterType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationConsultantType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/consultant/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/consultant/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/consultant/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/consultant/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/register.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/registerInfos.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/candidat/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/recruiter/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/recruiter/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/recruiter/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/recruiter/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/recruiter/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CONSULTANT/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CONSULTANT/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +172,11 @@
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/admin" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -168,6 +189,9 @@
       <workItem from="1643971498298" duration="1752000" />
       <workItem from="1643973393449" duration="4090000" />
       <workItem from="1643977889000" duration="6366000" />
+      <workItem from="1644219040355" duration="5683000" />
+      <workItem from="1644226601327" duration="19144000" />
+      <workItem from="1644251495570" duration="8501000" />
     </task>
     <servers />
   </component>

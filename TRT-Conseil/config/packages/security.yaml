@@ -36,7 +36,7 @@ security:
          - { path: ^/admin, roles: ROLE_ADMIN }
          - { path: ^/consultant, roles: ROLE_CONSULTANT }
          - { path: ^/candidat, roles: ROLE_CANDIDAT }
-         - { path: ^/recruiteur, roles: ROLE_RECRUITEUR }
+         - { path: ^/recruiter, roles: ROLE_RECRUITEUR }
 
 when@test:
     security:

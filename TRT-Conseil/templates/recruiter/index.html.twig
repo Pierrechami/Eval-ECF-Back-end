@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recruiter index{% endblock %}
+
+{% block body %}
+    <h1>Liste de vos sociétés</h1>
+
+
+    <p>Les société et leurs adresse postale concernant l'adresse mail suivante : {{ email }}</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom de la société</th>
+                <th>Addresse Postale</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for recruiter in recruiters %}
+            <tr>
+                <td>{{ recruiter.companieName }}</td>
+                <td>{{ recruiter.address }}</td>
+                <td>
+                    <a href="{{ path('recruiter_edit', {'id': recruiter.id}) }}">Modifier mes informations</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('recruiter_new') }}">Ajouter une nouvelle entreprise </a>
+    <br>
+    <a href="{{ path('app') }}">Retour à la page d'accueil</a>
+
+{% endblock %}

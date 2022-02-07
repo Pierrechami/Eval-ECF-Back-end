@@ -1,0 +1,12 @@
+{{ form_start(form) }}
+  {#    {{ form_widget(form) }}#}
+{{ form_row(form.first_name) }}
+{{ form_row(form.name) }}
+
+Utilisateur concerné : {{ form_widget(form.user) }}
+
+<br>
+<button class="btn">{{ button_label|default('Save') }}</button>
+
+
+{{ form_end(form) }}

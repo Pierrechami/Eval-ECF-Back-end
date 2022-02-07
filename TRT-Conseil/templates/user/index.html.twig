@@ -3,6 +3,7 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
+
     <h1>Utilisateurs non acceptés </h1>
 
     <table class="table">
@@ -16,6 +17,7 @@
         </thead>
         <tbody>
         {% for user in users %}
+
             {% if user.isAccepted == false %}
                 <tr>
                     <td>{{ user.email }}</td>

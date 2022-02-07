@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consultant index{% endblock %}
+
+{% block body %}
+    <h1>Liste des consultants</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for consultant in consultants %}
+            <tr>
+                <td>{{ consultant.firstName }}</td>
+                <td>{{ consultant.name }}</td>
+                <td>
+                    <a href="{{ path('consultant_edit', {'id': consultant.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
