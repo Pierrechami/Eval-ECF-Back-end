@@ -38,6 +38,9 @@ security:
          - { path: ^/candidat, roles: ROLE_CANDIDAT }
          - { path: ^/recruiter, roles: ROLE_RECRUITEUR }
 
+    role_hierarchy:
+        ROLE_ADMIN: [ ROLE_CONSULTANT, ROLE_CANDIDAT, ROLE_RECRUITEUR ]
+
 when@test:
     security:
         password_hashers:

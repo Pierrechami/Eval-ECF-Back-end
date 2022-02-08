@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Informations complémentaires{% endblock %}
+
+{% block body %}
+    <h1>Informations complémentaires</h1>
+    {% for candidate in candidates %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Cv</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ candidate.firstName }}</td>
+                <td>{{ candidate.name }}</td>
+                <td>{{ candidate.cv }}</td>
+                <td>
+                    <a href="{{ path('candidate_show', {'id': candidate.id}) }}">Afficher</a>
+                    <a href="{{ path('candidate_edit', {'id': candidate.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Vous n'avez pas encore complété votre profil, vous pouvez le faire en cliquant, <a href="{{ path('candidate_new') }}">ici.</a> </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

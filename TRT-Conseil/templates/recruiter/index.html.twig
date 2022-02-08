@@ -3,37 +3,37 @@
 {% block title %}Recruiter index{% endblock %}
 
 {% block body %}
-    <h1>Liste de vos sociétés</h1>
+<h1>Information de votre société</h1>
 
 
-    <p>Les société et leurs adresse postale concernant l'adresse mail suivante : {{ email }}</p>
+<p>Les société et leurs adresse postale concernant l'adresse mail suivante : {{ email }}</p>
+    {% for recruiter in recruiters %}
     <table class="table">
-        <thead>
-            <tr>
-                <th>Nom de la société</th>
-                <th>Addresse Postale</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for recruiter in recruiters %}
-            <tr>
-                <td>{{ recruiter.companieName }}</td>
-                <td>{{ recruiter.address }}</td>
-                <td>
-                    <a href="{{ path('recruiter_edit', {'id': recruiter.id}) }}">Modifier mes informations</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
+    <thead>
+    <tr>
+        <th>Nom de la société</th>
+        <th>Addresse Postale</th>
+        <th>actions</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ recruiter.companieName }}</td>
+            <td>{{ recruiter.address }}</td>
+            <td>
+                <a href="{{ path('recruiter_edit', {'id': recruiter.id}) }}">Modifier mes informations</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% else %}
+    <div>
+        <p colspan="4" >Vous n'avez pas encore indiqué le Nom et l'Adressse de votre entreprise. Pour ajouter ses informations cliquer, <a href="{{ path('recruiter_new') }}">ici</a>
+        </p>
+    </div>
         {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('recruiter_new') }}">Ajouter une nouvelle entreprise </a>
-    <br>
-    <a href="{{ path('app') }}">Retour à la page d'accueil</a>
+
+<a href="{{ path('app') }}">Retour à la page d'accueil</a>
 
 {% endblock %}

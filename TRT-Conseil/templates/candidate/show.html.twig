@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Candidate{% endblock %}
+
+{% block body %}
+    <h1>Vous êtes : </h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Prénom</th>
+            <td>{{ candidate.firstName }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ candidate.name }}</td>
+        </tr>
+        <tr>
+            <th>Cv</th>
+            <td><a href="{{ asset('uploads/' ~ candidate.cv) }}" target="_blank">Afficher mon cv</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('candidate_index') }}">Retour</a>
+
+    <a href="{{ path('candidate_edit', {'id': candidate.id}) }}">Modifier</a>
+
+{% endblock %}

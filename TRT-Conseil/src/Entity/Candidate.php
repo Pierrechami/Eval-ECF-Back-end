@@ -91,12 +91,12 @@ class Candidate
         return $this;
     }
 
-    public function getCv(): ?string
+    public function getCv()
     {
         return $this->cv;
     }
 
-    public function setCv(?string $cv): self
+    public function setCv($cv)
     {
         $this->cv = $cv;
 

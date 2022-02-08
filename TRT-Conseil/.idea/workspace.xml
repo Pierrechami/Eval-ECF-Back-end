@@ -2,32 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a7be17-5dac-441b-9805-5be3b1759b25" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/ADMIN/AdminController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ADMIN/ConsultantController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/CANDIDAT/CandidatController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/RECRUITEUR/RecruiterController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/CandidatType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ConsultantType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/RecruiterType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationConsultantType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/consultant/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/consultant/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/consultant/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/consultant/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/register.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/registerInfos.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/candidat/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/recruiter/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/recruiter/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/recruiter/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/recruiter/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/recruiter/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/CandidateType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/candidate/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/candidate/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/candidate/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/candidate/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/candidate/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/candidate/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/assets.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/assets.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CONSULTANT/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CONSULTANT/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CANDIDAT/CandidatController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Candidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Candidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/candidat/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/recruiter/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recruiter/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/recruiter/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recruiter/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/recruiter/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recruiter/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +181,7 @@
       <workItem from="1643977889000" duration="6366000" />
       <workItem from="1644219040355" duration="5683000" />
       <workItem from="1644226601327" duration="19144000" />
-      <workItem from="1644251495570" duration="8501000" />
+      <workItem from="1644251495570" duration="30935000" />
     </task>
     <servers />
   </component>
