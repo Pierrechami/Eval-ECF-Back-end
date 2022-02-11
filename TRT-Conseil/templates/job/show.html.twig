@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Job{% endblock %}
+
+{% block body %}
+    <h1>Information sur le poste</h1>
+
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Titre de l'annonce</th>
+                <td>{{ job.title }}</td>
+            </tr>
+            <tr>
+                <th>Type de contrat</th>
+                <td>{{ job.typeContrat }}</td>
+            </tr>
+            <tr>
+                <th>Date de début</th>
+                <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date de fin</th>
+                <td>{{ job.endDate ? job.endDate|date('Y-m-d') : 'Pas de date de fin de contrat' }}</td>
+            </tr>
+            <tr>
+                <th>Nombre d'heures semaine</th>
+                <td>{{ job.time }}</td>
+            </tr>
+            <tr>
+                <th>Salaires mensuel</th>
+                <td>{{ job.salary }}€</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('job_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('job_edit', {'id': job.id}) }}">Modifier le contenue du poste</a>
+
+    {{ include('job/_delete_form.html.twig') }}
+{% endblock %}

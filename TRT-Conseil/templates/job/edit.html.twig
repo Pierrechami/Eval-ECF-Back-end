@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier le poste{% endblock %}
+
+{% block body %}
+    <h1>Modifier le contenue du poste</h1>
+
+    {{ include('job/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('job_index') }}">Retour à la liste</a>
+
+    {{ include('job/_delete_form.html.twig') }}
+{% endblock %}

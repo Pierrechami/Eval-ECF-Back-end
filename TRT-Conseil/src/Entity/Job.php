@@ -61,6 +61,7 @@ class Job
 
     /**
      * @ORM\ManyToOne(targetEntity=Recruiter::class, inversedBy="jobs")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $recruiter;
 
@@ -174,13 +175,14 @@ class Job
 
         return $this;
     }
-
-    public function getRecruiter(): ?Recruiter
+// : ?Recruiter
+    public function getRecruiter()
     {
         return $this->recruiter;
     }
 
-    public function setRecruiter(?Recruiter $recruiter): self
+    // ?Recruiter
+    public function setRecruiter( $recruiter): self
     {
         $this->recruiter = $recruiter;
 
@@ -213,4 +215,13 @@ class Job
 
         return $this;
     }
+
+    public function __toString()
+    {
+        // to show the name of the Category in the select
+        return (string) $this->title;
+        // to show the id of the Category in the select
+        // return $this->id;
+    }
+
 }
