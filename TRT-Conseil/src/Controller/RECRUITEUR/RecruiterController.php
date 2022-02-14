@@ -21,6 +21,8 @@ class RecruiterController extends AbstractController
      */
     public function index(RecruiterRepository $recruiterRepository): Response
     {
+
+
         $id = $this->getUser()->getID();
         $email = $this->getUser()->getEmail();
         return $this->render('recruiter/index.html.twig', [
@@ -32,8 +34,26 @@ class RecruiterController extends AbstractController
     /**
      * @Route("/new", name="recruiter_new", methods={"GET", "POST"})
      */
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, RecruiterRepository $recruiterRepository): Response
     {
+
+
+
+        //récupére l'utilisateur courant
+        $utilisateur = $this->getUser();
+
+        // Récupère l'id de l'utilisateur courant
+        $iduser = $this->getUser()->getId();
+
+        //récupére le recruiter/entreprise faisant réfèrence a l'User
+        $recruiteur = $recruiterRepository->findBy(['user' => ['id' => $iduser]]);
+
+            // Fait une rediction vers la route recruiter_index car l'user ne peut avoir qu'une seul société (recruiter)
+           if ($recruiterRepository->findBy(['user' => ['id' => $iduser]]) !== []){
+               return  $this->redirectToRoute('recruiter_index');
+           }
+
+
         $recruiter = new Recruiter();
         $form = $this->createForm(RecruiterType::class, $recruiter);
         $form->handleRequest($request);

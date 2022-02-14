@@ -63,4 +63,87 @@
     <a href="{{ path('app') }}">Retour à la page d'accueil</a>
 
     {#  <a href="{{ path('user_new') }}">Create new</a> #}
+
+
+
+
+
+
+
+
+
+<h1>Liste des annonces qui ont été acceptées par nos équipes :</h1>
+
+{% for job in jobs %}
+    {% if job.isAccepted == true %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Titre de l'annonce</th>
+                <th>Type de contrat</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Nombre d'heures semaine</th>
+                <th>Salaires mensuel</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ job.title }}</td>
+                <td>{{ job.typeContrat }}</td>
+                <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
+                <td>{{ job.endDate ? job.endDate|date('Y-m-d') : 'Pas de date de fin de contrat' }}</td>
+                <td>{{ job.time }}</td>
+                <td>{{ job.salary }}€</td>
+                <td>
+                    <a href="{{ path('job_edit_consultant', {'id': job.id}) }}">Modifier</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    {% endif %}
+
+
+{% endfor %}
+
+
+
+<h1>Liste des annonces qui n'ont pas encore été acceptées par nos équipes :</h1>
+
+
+{% for job in jobs %}
+    {% if job.isAccepted == false %}
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Titre de l'annonce</th>
+                <th>Type de contrat</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Nombre d'heures semaine</th>
+                <th>Salaires</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ job.title }}</td>
+                <td>{{ job.typeContrat }}</td>
+                <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
+                <td>{{ job.endDate ? job.endDate|date('Y-m-d') : 'Pas de date de fin de contrat' }}</td>
+                <td>{{ job.time }}</td>
+                <td>{{ job.salary }}</td>
+                <td>
+                    <a href="{{ path('job_edit_consultant', {'id': job.id}) }}">Modifier</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    {% endif %}
+
+
+{% endfor %}
 {% endblock %}

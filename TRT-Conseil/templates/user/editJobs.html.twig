@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block body %}
+    <h1>Accepter le job </h1>
+
+
+    {{ form_start(form) }}
+    Accepter le job : {{ form_widget(form.is_accepted) }} (Cocher la case pour accepter l'utilisateur)
+    <br>
+    <button class="btn">{{ button_label|default('Mettre a jour') }}</button>
+    <a href="{{ path('user_index') }}">Retour à la liste</a>
+
+
+    {{ form_end(form) }}
+{% endblock %}

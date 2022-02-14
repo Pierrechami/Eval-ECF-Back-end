@@ -4,99 +4,92 @@
 
 {% block body %}
 
-    <br>
-    <br>
-    Vous pouvez déposer une annonce directement en cliquant <a href="{{ path('job_new') }}">ici</a>
-    <br>
-    <br>
-
-
-
+    <p>Vous pouvez déposer une annonce pour votre entreprise directement en cliquant <a
+                href="{{ path('job_new') }}">ici.</a> <strong>Si vous n'avez pas défini d'entreprise vous serez redirigé vers la page de création d'entreprise</strong></p>
 
     {% if jobs == false %}
         <div>
             <p colspan="4">Vous n'avez pas encore déposé d'annonce</p>
-            <p>Vous n'avez pas encore d'annonce acceptées par nos équipes</p>
         </div>
+    {% else %}
+
+
+
+        <h1>Liste des annonces qui ont été acceptées par nos équipes :</h1>
+
+        {% for job in jobs %}
+            {% if job.isAccepted == true %}
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Titre de l'annonce</th>
+                        <th>Type de contrat</th>
+                        <th>Date de début</th>
+                        <th>Date de fin</th>
+                        <th>Nombre d'heures semaine</th>
+                        <th>Salaires mensuel</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{ job.title }}</td>
+                        <td>{{ job.typeContrat }}</td>
+                        <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
+                        <td>{{ job.endDate ? job.endDate|date('Y-m-d') : 'Pas de date de fin de contrat' }}</td>
+                        <td>{{ job.time }}</td>
+                        <td>{{ job.salary }}€</td>
+                        <td>
+                            <a href="{{ path('job_show', {'id': job.id}) }}">Afficher</a>
+                            <a href="{{ path('job_edit', {'id': job.id}) }}">Modifier</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            {% endif %}
+
+
+        {% endfor %}
+
+
+
+        <h1>Liste des annonces qui n'ont pas encore été acceptées par nos équipes :</h1>
+
+
+        {% for job in jobs %}
+            {% if job.isAccepted == false %}
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Titre de l'annonce</th>
+                        <th>Type de contrat</th>
+                        <th>Date de début</th>
+                        <th>Date de fin</th>
+                        <th>Nombre d'heures semaine</th>
+                        <th>Salaires</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{ job.title }}</td>
+                        <td>{{ job.typeContrat }}</td>
+                        <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
+                        <td>{{ job.endDate ? job.endDate|date('Y-m-d') : 'Pas de date de fin de contrat' }}</td>
+                        <td>{{ job.time }}</td>
+                        <td>{{ job.salary }}</td>
+                        <td>
+                            <a href="{{ path('job_show', {'id': job.id}) }}">Afficher</a>
+                            <a href="{{ path('job_edit', {'id': job.id}) }}">Modifier</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            {% endif %}
+
+
+        {% endfor %}
     {% endif %}
-
-
-    <h1>Liste des annonces qui ont été acceptées par nos équipes :</h1>
-
-    {% for job in jobs %}
-        {% if job.isAccepted == true %}
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Titre de l'annonce</th>
-                    <th>Type de contrat</th>
-                    <th>Date de début</th>
-                    <th>Date de fin</th>
-                    <th>Nombre d'heures semaine</th>
-                    <th>Salaires mensuel</th>
-                    <th>Nom de l'entreprise</th>
-                    <th>actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>{{ job.title }}</td>
-                    <td>{{ job.typeContrat }}</td>
-                    <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
-                    <td>{{ job.endDate ? job.endDate|date('Y-m-d') : 'Pas de date de fin de contrat' }}</td>
-                    <td>{{ job.time }}</td>
-                    <td>{{ job.salary }}€</td>
-                    <td>{{ job.recruiter }}</td>
-                    <td>
-                        <a href="{{ path('job_show', {'id': job.id}) }}">Afficher</a>
-                        <a href="{{ path('job_edit', {'id': job.id}) }}">Modifier</a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-
-        {% endif %}
-
-
-    {% endfor %}
-
-
-
-    <h1>Liste des annonces qui n'ont pas encore été acceptées par nos équipes :</h1>
-
-
-    {% for job in jobs %}
-        {% if job.isAccepted == false %}
-
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Titre de l'annonce</th>
-                    <th>Type de contrat</th>
-                    <th>Date de début</th>
-                    <th>Date de fin</th>
-                    <th>Nombre d'heures semaine</th>
-                    <th>Salaires</th>
-                    <th>actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>{{ job.title }}</td>
-                    <td>{{ job.typeContrat }}</td>
-                    <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
-                    <td>{{ job.endDate ? job.endDate|date('Y-m-d') : 'Pas de date de fin de contrat' }}</td>
-                    <td>{{ job.time }}</td>
-                    <td>{{ job.salary }}</td>
-                    <td>
-                        <a href="{{ path('job_show', {'id': job.id}) }}">Afficher</a>
-                        <a href="{{ path('job_edit', {'id': job.id}) }}">Modifier</a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        {% endif %}
-
-
-    {% endfor %}
 {% endblock %}

@@ -36,7 +36,7 @@ class Recruiter
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity=Job::class, mappedBy="recruiter")
+     * @ORM\OneToMany(targetEntity=Job::class, mappedBy="recruiter", cascade={"remove"})
      */
     private $jobs;
 

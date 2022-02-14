@@ -2,8 +2,12 @@
 
 namespace App\Controller\CONSULTANT;
 
+use App\Entity\Job;
 use App\Entity\User;
+use App\Form\JobConsultantType;
+use App\Form\JobType;
 use App\Form\UserType;
+use App\Repository\JobRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,11 +23,12 @@ class UserController extends AbstractController
     /**
      * @Route("/", name="user_index", methods={"GET"})
      */
-    public function index(UserRepository $userRepository ): Response
+    public function index(UserRepository $userRepository , JobRepository $jobRepository): Response
     {
 
         return $this->render('user/index.html.twig', [
             'users' => $userRepository->findAll(),
+            'jobs' => $jobRepository->findAll(),
         ]);
     }
 
@@ -75,6 +80,27 @@ class UserController extends AbstractController
 
         return $this->renderForm('user/edit.html.twig', [
             'user' => $user,
+            'form' => $form,
+        ]);
+    }
+
+
+    /**
+     * @Route("jobs/{id}/edit", name="job_edit_consultant", methods={"GET", "POST"})
+     */
+    public function editJobs(Request $request, Job $job, EntityManagerInterface $entityManager): Response
+    {
+        $form = $this->createForm(JobConsultantType::class, $job);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+
+            return $this->redirectToRoute('user_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('user/editJobs.html.twig', [
+            'job' => $job,
             'form' => $form,
         ]);
     }

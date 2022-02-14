@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Job;
+use App\Repository\JobRepository;
+use App\Repository\RecruiterRepository;
 use phpDocumentor\Reflection\Types\Boolean;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -16,6 +18,8 @@ class JobType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+
+
         $builder
             ->add('title', TextType::class, [
                 'label' => 'Nom du poste : ',
@@ -45,12 +49,14 @@ class JobType extends AbstractType
             #  ->add('to_apply', null, [
             #   'label' => 'Postuler à l'\offre '
             # ])
-            ->add('is_accepted', null, [
-                'label' => 'Accepter l\'offre : '
-            ])
-           ->add('recruiter')
+           # ->add('is_accepted', null, [
+         #       'label' => 'Accepter l\'offre : '
+         #   ])
+         #  ->add('recruiter')
             ##  ->add('candidates')
         ;
+
+
     }
 
     public function configureOptions(OptionsResolver $resolver): void

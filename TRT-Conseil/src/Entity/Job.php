@@ -59,11 +59,12 @@ class Job
      */
     private $is_accepted;
 
+
     /**
      * @ORM\ManyToOne(targetEntity=Recruiter::class, inversedBy="jobs")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false , onDelete="CASCADE")
      */
-    private $recruiter;
+    private  $recruiter;
 
     /**
      * @ORM\ManyToMany(targetEntity=Candidate::class, mappedBy="apply_job")
@@ -133,6 +134,7 @@ class Job
         return $this->time;
     }
 
+
     public function setTime(int $time): self
     {
         $this->time = $time;
@@ -175,19 +177,7 @@ class Job
 
         return $this;
     }
-// : ?Recruiter
-    public function getRecruiter()
-    {
-        return $this->recruiter;
-    }
 
-    // ?Recruiter
-    public function setRecruiter( $recruiter): self
-    {
-        $this->recruiter = $recruiter;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Candidate[]
@@ -223,5 +213,22 @@ class Job
         // to show the id of the Category in the select
         // return $this->id;
     }
+
+
+//: ?Recruiter
+        public function getRecruiter()
+    {
+      return $this->recruiter;
+    }
+
+    // ?Recruiter
+    public function setRecruiter( $recruiter): self
+    {
+      $this->recruiter = $recruiter;
+
+      return $this;
+    }
+
+
 
 }

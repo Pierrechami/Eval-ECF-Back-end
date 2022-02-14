@@ -39,7 +39,6 @@ class JobController extends AbstractController
                 //  récupérer tout les job faisant référence a l'id du recruteur
          $jobReferenceIdRecruteur = $jobRepository->findBy(['recruiter'=> $recruiteur]);
 
-
         return $this->render('job/index.html.twig', [
             'jobs' => $jobReferenceIdRecruteur,
         ]);
@@ -51,22 +50,26 @@ class JobController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager, RecruiterRepository $recruiterRepository): Response
     {
 
-        // A voir jeudi
 
         //récupére l'utilisateur courant
-    #    $utilisateur = $this->getUser();
+       $utilisateur = $this->getUser();
 
         // Récupère l'id de l'utilisateur courant
         $iduser = $this->getUser()->getId();
 
         //récupére le recruiter/entreprise faisant réfèrence a l'User
         $recruiteur = $recruiterRepository->findBy(['user' => ['id' => $iduser]]);
-        $nameJob = ['companie_name'];
+
+        if ($recruiteur == []) {
+            return  $this->redirectToRoute('recruiter_new');
+        }
+
 
         $job = new Job();
-        $job->setRecruiter($nameJob);
+        $job->setRecruiter($recruiteur[0]);
         $form = $this->createForm(JobType::class, $job);
         $form->handleRequest($request);
+        $job->setIsAccepted(false);
 
 
         if ($form->isSubmitted() && $form->isValid()) {
