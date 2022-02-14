@@ -24,8 +24,11 @@ class CandidateController extends AbstractController
      */
     public function index(CandidateRepository $candidateRepository): Response
     {
+        $userId = $this->getUser()->getId();
+        $candidate = $candidateRepository->findBy(['user' => ['id' => $userId]]);
+
         return $this->render('candidate/index.html.twig', [
-            'candidates' => $candidateRepository->findAll(),
+            'candidates' => $candidate,
         ]);
     }
 
@@ -45,16 +48,16 @@ class CandidateController extends AbstractController
 
 
             if ($cvFile) {
-                $newFilename = uniqid().'.'.$cvFile->guessExtension();
+                $newFilename = uniqid() . '.' . $cvFile->guessExtension();
 
                 // Move the file to the directory where brochures are stored
                 try {
                     $cvFile->move(
-                        $this->getParameter('kernel.project_dir') .'/public/uploads',
+                        $this->getParameter('kernel.project_dir') . '/public/uploads',
                         $newFilename
                     );
                 } catch (FileException $e) {
-                    $this->addFlash('error' , $e->getMessage());
+                    $this->addFlash('error', $e->getMessage());
                 }
 
                 $candidate->setCv($newFilename);
@@ -104,11 +107,11 @@ class CandidateController extends AbstractController
                 // Move the file to the directory where brochures are stored
                 try {
                     $cvFile->move(
-                        $this->getParameter('kernel.project_dir') .'/public/uploads',
+                        $this->getParameter('kernel.project_dir') . '/public/uploads',
                         $newFilename
                     );
                 } catch (FileException $e) {
-                    $this->addFlash('error' , $e->getMessage());
+                    $this->addFlash('error', $e->getMessage());
                 }
 
                 $candidate->setCv($newFilename);
@@ -131,15 +134,16 @@ class CandidateController extends AbstractController
      */
     public function delete(Request $request, Candidate $candidate, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$candidate->getId(), $request->request->get('_token'))) {
-           $filename = $candidate->getCv();
-            
+        if ($this->isCsrfTokenValid('delete' . $candidate->getId(), $request->request->get('_token'))) {
+            $filename = $candidate->getCv();
+
             $entityManager->remove($candidate);
             $entityManager->flush();
             $fs = new Filesystem();
-            $fs->remove($this->getParameter('kernel.project_dir') .'/public/uploads/' . $filename);
+            $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/' . $filename);
         }
 
         return $this->redirectToRoute('candidate_index', [], Response::HTTP_SEE_OTHER);
     }
+
 }

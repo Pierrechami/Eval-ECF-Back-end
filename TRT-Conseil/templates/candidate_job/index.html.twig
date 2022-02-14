@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Job index{% endblock %}
+
+{% block body %}
+
+    <h1>Liste des annonces</h1>
+
+    {% if jobs == [] %}
+    <h3>Il n'y a pas encore d'annonce de publié sur le site </h3>
+        {% else %}
+
+    <h2>Annonce(s) ou vous avez postulé</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Type de contrat</th>
+            <th>date de début</th>
+            <th>date de fin</th>
+            <th>Nombre d'heures</th>
+            <th>Salaire Mensuel</th>
+            <th>Postuler au job</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for job in jobs %}
+
+            {% if job.toApply == true %}
+                <tr>
+                    <td>{{ job.title }}</td>
+                    <td>{{ job.typeContrat }}</td>
+                    <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
+                    <td>{{ job.endDate ? job.endDate|date('d-m-Y') : 'Pas de date de fin de contrat' }}</td>
+                    <td>{{ job.time }}</td>
+                    <td>{{ job.salary }} €</td>
+                    <td>{{ job.toApply ? 'Oui' : 'Non' }}</td>
+                    <td>
+                        <a href="{{ path('candidate_job_show', {'id': job.id}) }}">lire</a>
+                        <a href="{{ path('candidate_job_edit', {'id': job.id}) }}">modifier</a>
+                    </td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <h2>Annonce(s) ou vous n'avez pas postulé</h2>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Type de contrat</th>
+            <th>date de début</th>
+            <th>date de fin</th>
+            <th>Nombre d'heures</th>
+            <th>Salaire Mensuel</th>
+            <th>Postuler au job</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for job in jobs %}
+            {% if job.toApply == false %}
+                <tr>
+                    <td>{{ job.title }}</td>
+                    <td>{{ job.typeContrat }}</td>
+                    <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
+                    <td>{{ job.endDate ? job.endDate|date('d-m-Y') : 'Pas de date de fin de contrat' }}</td>
+                    <td>{{ job.time }}</td>
+                    <td>{{ job.salary }} €</td>
+                    <td>{{ job.toApply ? 'Oui' : 'Non' }}</td>
+                    <td>
+                        <a href="{{ path('candidate_job_show', {'id': job.id}) }}">lire</a>
+                        <a href="{{ path('candidate_job_edit', {'id': job.id}) }}">modifier</a>
+                    </td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% endif %}
+{% endblock %}

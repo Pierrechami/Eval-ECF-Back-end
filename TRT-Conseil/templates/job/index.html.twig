@@ -36,7 +36,7 @@
                         <td>{{ job.title }}</td>
                         <td>{{ job.typeContrat }}</td>
                         <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
-                        <td>{{ job.endDate ? job.endDate|date('Y-m-d') : 'Pas de date de fin de contrat' }}</td>
+                        <td>{{ job.endDate ? job.endDate|date('d-m-Y') : 'Pas de date de fin de contrat' }}</td>
                         <td>{{ job.time }}</td>
                         <td>{{ job.salary }}€</td>
                         <td>
@@ -77,9 +77,9 @@
                         <td>{{ job.title }}</td>
                         <td>{{ job.typeContrat }}</td>
                         <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
-                        <td>{{ job.endDate ? job.endDate|date('Y-m-d') : 'Pas de date de fin de contrat' }}</td>
+                        <td>{{ job.endDate ? job.endDate|date('d-m-Y') : 'Pas de date de fin de contrat' }}</td>
                         <td>{{ job.time }}</td>
-                        <td>{{ job.salary }}</td>
+                        <td>{{ job.salary }}€</td>
                         <td>
                             <a href="{{ path('job_show', {'id': job.id}) }}">Afficher</a>
                             <a href="{{ path('job_edit', {'id': job.id}) }}">Modifier</a>

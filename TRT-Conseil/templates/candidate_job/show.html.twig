@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Job{% endblock %}
+
+{% block body %}
+    <h1>Job</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ job.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ job.title }}</td>
+            </tr>
+            <tr>
+                <th>Type_contrat</th>
+                <td>{{ job.typeContrat }}</td>
+            </tr>
+            <tr>
+                <th>Start_date</th>
+                <td>{{ job.startDate ? job.startDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>End_date</th>
+                <td>{{ job.endDate ? job.endDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Time</th>
+                <td>{{ job.time }}</td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td>{{ job.salary }}</td>
+            </tr>
+            <tr>
+                <th>To_apply</th>
+                <td>{{ job.toApply ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Is_accepted</th>
+                <td>{{ job.isAccepted ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('candidate_job_index') }}">back to list</a>
+
+    <a href="{{ path('candidate_job_edit', {'id': job.id}) }}">edit</a>
+
+    {{ include('candidate_job/_delete_form.html.twig') }}
+{% endblock %}
