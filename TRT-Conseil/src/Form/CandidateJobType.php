@@ -13,7 +13,7 @@ class CandidateJobType extends AbstractType
     {
         $builder
             ->add('to_apply')
-            ->add('candidates')
+          #  ->add('candidates')
         ;
     }
 

@@ -3,6 +3,10 @@
 {% block title %}Job index{% endblock %}
 
 {% block body %}
+{% for message in app.flashes('success') %}
+    {{ message }}
+    {% endfor %}
+
 
     <h1>Liste des annonces</h1>
 

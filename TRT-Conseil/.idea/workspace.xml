@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a7be17-5dac-441b-9805-5be3b1759b25" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220214134349.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/620a215e7a605.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateJobController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/CandidateJobType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/candidate_job/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/candidate_job/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/candidate_job/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/candidate_job/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/candidate_job/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/candidate_job/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/job/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/recruiter/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recruiter/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateJobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateJobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Job.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CandidateJobType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CandidateJobType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/candidate_job/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidate_job/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +177,8 @@
       <workItem from="1644566479109" duration="16776000" />
       <workItem from="1644781195541" duration="3870000" />
       <workItem from="1644826865430" duration="12465000" />
+      <workItem from="1644846448683" duration="111000" />
+      <workItem from="1644846633342" duration="11692000" />
     </task>
     <servers />
   </component>

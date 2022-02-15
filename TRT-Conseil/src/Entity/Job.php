@@ -66,8 +66,9 @@ class Job
      */
     private  $recruiter;
 
+    // , orphanRemoval=true
     /**
-     * @ORM\ManyToMany(targetEntity=Candidate::class, mappedBy="apply_job")
+     * @ORM\ManyToMany(targetEntity=Candidate::class, mappedBy="apply_job" )
      */
     private $candidates;
 
