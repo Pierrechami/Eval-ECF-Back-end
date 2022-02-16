@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a7be17-5dac-441b-9805-5be3b1759b25" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/uploads/620bc55988572.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateJobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateJobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/JOB/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JOB/JobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RECRUITEUR/RecruiterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RECRUITEUR/RecruiterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Job.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/CandidateJobType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CandidateJobType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/candidate_job/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidate_job/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/candidate_job/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidate_job/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +182,9 @@
       <workItem from="1644781195541" duration="3870000" />
       <workItem from="1644826865430" duration="12465000" />
       <workItem from="1644846448683" duration="111000" />
-      <workItem from="1644846633342" duration="11692000" />
+      <workItem from="1644846633342" duration="16006000" />
+      <workItem from="1644923946366" duration="1464000" />
+      <workItem from="1644932164873" duration="6813000" />
     </task>
     <servers />
   </component>

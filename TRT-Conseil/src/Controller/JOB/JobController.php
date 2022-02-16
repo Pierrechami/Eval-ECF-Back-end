@@ -60,9 +60,11 @@ class JobController extends AbstractController
         //récupére le recruiter/entreprise faisant réfèrence a l'User
         $recruiteur = $recruiterRepository->findBy(['user' => ['id' => $iduser]]);
 
+
         if ($recruiteur == []) {
             return  $this->redirectToRoute('recruiter_new');
         }
+
 
 
         $job = new Job();
@@ -127,4 +129,5 @@ class JobController extends AbstractController
 
         return $this->redirectToRoute('job_index', [], Response::HTTP_SEE_OTHER);
     }
+
 }

@@ -62,7 +62,7 @@ class Job
 
     /**
      * @ORM\ManyToOne(targetEntity=Recruiter::class, inversedBy="jobs")
-     * @ORM\JoinColumn(nullable=false , onDelete="CASCADE")
+     * @ORM\JoinColumn(nullable=false , onDelete="CASCADE" , unique=false)
      */
     private  $recruiter;
 

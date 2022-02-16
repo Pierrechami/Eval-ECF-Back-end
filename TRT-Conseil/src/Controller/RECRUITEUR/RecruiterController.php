@@ -48,7 +48,7 @@ class RecruiterController extends AbstractController
         //récupére le recruiter/entreprise faisant réfèrence a l'User
         $recruiteur = $recruiterRepository->findBy(['user' => ['id' => $iduser]]);
 
-            // Fait une rediction vers la route recruiter_index car l'user ne peut avoir qu'une seul société (recruiter)
+            // Fait une redirection vers la route recruiter_index car l'user ne peut avoir qu'une seul société (recruiter)
            if ($recruiterRepository->findBy(['user' => ['id' => $iduser]]) !== []){
                return  $this->redirectToRoute('recruiter_index');
            }
