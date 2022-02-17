@@ -80,6 +80,8 @@
             <thead>
             <tr>
                 <th>Titre de l'annonce</th>
+                <th>Description du Poste</th>
+                <th>Lieu</th>
                 <th>Type de contrat</th>
                 <th>Date de début</th>
                 <th>Date de fin</th>
@@ -91,6 +93,8 @@
             <tbody>
             <tr>
                 <td>{{ job.title }}</td>
+                <td>{{ job.description }}</td>
+                <td>{{ job.place }}</td>
                 <td>{{ job.typeContrat }}</td>
                 <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
                 <td>{{ job.endDate ? job.endDate|date('d-m-Y') : 'Pas de date de fin de contrat' }}</td>
@@ -120,6 +124,8 @@
             <thead>
             <tr>
                 <th>Titre de l'annonce</th>
+                <th>Description du Poste</th>
+                <th>Lieu</th>
                 <th>Type de contrat</th>
                 <th>Date de début</th>
                 <th>Date de fin</th>
@@ -131,6 +137,8 @@
             <tbody>
             <tr>
                 <td>{{ job.title }}</td>
+                <td>{{ job.description }}</td>
+                <td>{{ job.place }}</td>
                 <td>{{ job.typeContrat }}</td>
                 <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
                 <td>{{ job.endDate ? job.endDate|date('d-m-Y') : 'Pas de date de fin de contrat' }}</td>

@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for job in jobs %}
+        {{ dump(job.getCandidates()) }}
+    {% endfor %}
+
+{% endblock %}

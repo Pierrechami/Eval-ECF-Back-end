@@ -22,11 +22,17 @@ class RecruiterController extends AbstractController
     public function index(RecruiterRepository $recruiterRepository): Response
     {
 
+        $user = $this->getUser()->getIsAccepted();
+
+        if ($user == false) {
+            $this->addFlash('erreur_autorisation_recruiter', 'Votre compte "'. $this->getUser()->getUserIdentifier() . '" n\'a pas encore été accepté. Nos équipe font au plus vite pour valider votre demande !');
+            return $this->redirectToRoute('app');
+        }
 
         $id = $this->getUser()->getID();
         $email = $this->getUser()->getEmail();
         return $this->render('recruiter/index.html.twig', [
-            'recruiters' => $recruiterRepository->findBy( ['user' => ['id' => $id]]),
+            'recruiters' => $recruiterRepository->findBy(['user' => ['id' => $id]]),
             'email' => $email
         ]);
     }
@@ -38,7 +44,6 @@ class RecruiterController extends AbstractController
     {
 
 
-
         //récupére l'utilisateur courant
         $utilisateur = $this->getUser();
 
@@ -48,10 +53,10 @@ class RecruiterController extends AbstractController
         //récupére le recruiter/entreprise faisant réfèrence a l'User
         $recruiteur = $recruiterRepository->findBy(['user' => ['id' => $iduser]]);
 
-            // Fait une redirection vers la route recruiter_index car l'user ne peut avoir qu'une seul société (recruiter)
-           if ($recruiterRepository->findBy(['user' => ['id' => $iduser]]) !== []){
-               return  $this->redirectToRoute('recruiter_index');
-           }
+        // Fait une redirection vers la route recruiter_index car l'user ne peut avoir qu'une seul société (recruiter)
+        if ($recruiterRepository->findBy(['user' => ['id' => $iduser]]) !== []) {
+            return $this->redirectToRoute('recruiter_index');
+        }
 
 
         $recruiter = new Recruiter();
@@ -74,13 +79,22 @@ class RecruiterController extends AbstractController
     }
 
 
-
-
     /**
      * @Route("/{id}/edit", name="recruiter_edit", methods={"GET", "POST"})
      */
-    public function edit(Request $request, Recruiter $recruiter, EntityManagerInterface $entityManager , $id): Response
+    public function edit(Request $request, Recruiter $recruiter, EntityManagerInterface $entityManager, RecruiterRepository $recruiterRepository, $id): Response
     {
+
+
+        $userid = $this->getUser()->getId(); // 5
+        $idRecruiterUser = $recruiter->getUser()->getId();
+
+        //retour vers la page d'accueil si un recruteur essai de modifier les informations d'un autre recruteur
+        if ($userid !== $idRecruiterUser) {
+            return $this->redirectToRoute('app');
+        }
+
+
         $id = $recruiter->getId();
         $form = $this->createForm(RecruiterType::class, $recruiter);
         $form->handleRequest($request);
@@ -91,6 +105,7 @@ class RecruiterController extends AbstractController
 
             return $this->redirectToRoute('recruiter_index', [], Response::HTTP_SEE_OTHER);
         }
+
 
         return $this->renderForm('recruiter/edit.html.twig', [
             'recruiter' => $recruiter,
@@ -103,7 +118,7 @@ class RecruiterController extends AbstractController
      */
     public function delete(Request $request, Recruiter $recruiter, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$recruiter->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $recruiter->getId(), $request->request->get('_token'))) {
             $entityManager->remove($recruiter);
             $entityManager->flush();
         }

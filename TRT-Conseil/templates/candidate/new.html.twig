@@ -3,7 +3,15 @@
 {% block title %}New Candidate{% endblock %}
 
 {% block body %}
+
     <h1>Informations personnelles</h1>
+
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <br>
 
     {{ include('candidate/_form.html.twig') }}
 

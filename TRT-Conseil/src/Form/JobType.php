@@ -5,11 +5,13 @@ namespace App\Form;
 use App\Entity\Job;
 use App\Repository\JobRepository;
 use App\Repository\RecruiterRepository;
+use Doctrine\DBAL\Types\StringType;
 use phpDocumentor\Reflection\Types\Boolean;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -23,6 +25,12 @@ class JobType extends AbstractType
         $builder
             ->add('title', TextType::class, [
                 'label' => 'Nom du poste : ',
+            ])
+            ->add('place', TextType::class, [
+                'label' => 'Lieu : '
+            ])
+            ->add('description', TextareaType::class, [
+                'label' => 'description du poste : '
             ])
             ->add('type_contrat', ChoiceType::class, [
                 'multiple' => false,

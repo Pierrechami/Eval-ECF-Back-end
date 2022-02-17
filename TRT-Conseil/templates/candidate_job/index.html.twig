@@ -10,6 +10,10 @@
     {% endfor %}
 
 
+    <form action="{{ path('search') }}">
+        <input type="text" name="search"  placeholder="ex : Serveur">
+        <input type="submit"  value="Rechercher">
+    </form>
 
 
 
@@ -22,6 +26,8 @@
             <thead>
             <tr>
                 <th>Titre</th>
+                <th>Description du Poste</th>
+                <th>Lieu</th>
                 <th>Type de contrat</th>
                 <th>date de début</th>
                 <th>date de fin</th>
@@ -32,9 +38,11 @@
             </thead>
             <tbody>
             {% for job in jobs %}
-
+                {% if job.isAccepted == true %}
                 <tr>
                     <td>{{ job.title }}</td>
+                    <td>{{ job.description }}</td>
+                    <td>{{ job.place }}</td>
                     <td>{{ job.typeContrat }}</td>
                     <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
                     <td>{{ job.endDate ? job.endDate|date('d-m-Y') : 'Pas de date de fin de contrat' }}</td>
@@ -45,6 +53,7 @@
                         <a href="{{ path('candidate_job_edit', {'id': job.id}) }}">Postuler</a>
                     </td>
                 </tr>
+                {% endif %}
             {% endfor %}
             </tbody>
         </table>

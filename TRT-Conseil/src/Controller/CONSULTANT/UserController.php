@@ -26,6 +26,7 @@ class UserController extends AbstractController
     public function index(UserRepository $userRepository , JobRepository $jobRepository): Response
     {
 
+
         return $this->render('user/index.html.twig', [
             'users' => $userRepository->findAll(),
             'jobs' => $jobRepository->findAll(),

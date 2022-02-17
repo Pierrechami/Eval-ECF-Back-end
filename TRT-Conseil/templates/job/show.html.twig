@@ -8,30 +8,38 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Titre de l'annonce</th>
-                <td>{{ job.title }}</td>
-            </tr>
-            <tr>
-                <th>Type de contrat</th>
-                <td>{{ job.typeContrat }}</td>
-            </tr>
-            <tr>
-                <th>Date de début</th>
-                <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Date de fin</th>
-                <td>{{ job.endDate ? job.endDate|date('Y-m-d') : 'Pas de date de fin de contrat' }}</td>
-            </tr>
-            <tr>
-                <th>Nombre d'heures semaine</th>
-                <td>{{ job.time }}</td>
-            </tr>
-            <tr>
-                <th>Salaires mensuel</th>
-                <td>{{ job.salary }}€</td>
-            </tr>
+        <tr>
+            <th>Titre de l'annonce</th>
+            <td>{{ job.title }}</td>
+        </tr>
+        <tr>
+            <th>lieu </th>
+            <td>{{ job.place }}</td>
+        </tr>
+        <tr>
+            <th>Description du poste</th>
+            <td>{{ job.description }}</td>
+        </tr>
+        <tr>
+            <th>Type de contrat</th>
+            <td>{{ job.typeContrat }}</td>
+        </tr>
+        <tr>
+            <th>Date de début</th>
+            <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Date de fin</th>
+            <td>{{ job.endDate ? job.endDate|date('Y-m-d') : 'Pas de date de fin de contrat' }}</td>
+        </tr>
+        <tr>
+            <th>Nombre d'heures semaine</th>
+            <td>{{ job.time }}</td>
+        </tr>
+        <tr>
+            <th>Salaires mensuel</th>
+            <td>{{ job.salary }}€</td>
+        </tr>
         </tbody>
     </table>
 

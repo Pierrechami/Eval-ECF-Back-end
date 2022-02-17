@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ search }}
+{% endblock %}
+
+{% block body %}
+<h1> Résultat de recherche pour :<u> <b> {{ search }}</b></u></h1> <br>
+
+<main class="main container">
+    {% for job in jobs %}
+        {% if job.isAccepted %}
+
+            <h1>titre : {{ job.title }}</h1>
+            <p>Description : {{ job.description }}</p>
+            <p>Lieu : {{ job.place }}</p>
+            <p>Type de contrat : {{ job.typeContrat }}</p>
+            <p>Date de début : {{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</p>
+            <p>Date de fin : {{ job.endDate ? job.endDate|date('d-m-Y') : 'Pas de date de fin de contrat' }}}</p>
+            <p>Nombre d'heures semaine : {{ job.time }} </p>
+            <p>Salaire : {{ job.salary }} €</p>
+            <p>Pour postuler cliquer <a href="{{ path('candidate_job_edit', {'id': job.id}) }}">ici</a></p>
+
+            <a href="{{ path('candidate_job_index') }}">Retour a la liste</a>
+        {% endif %}
+    {% endfor %}
+
+
+    {% endblock %}
+
+
+

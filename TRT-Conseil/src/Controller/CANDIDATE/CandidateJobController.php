@@ -23,7 +23,7 @@ class CandidateJobController extends AbstractController
     /**
      * @Route("/liste", name="candidate_job_index", methods={"GET"})
      */
-    public function index(JobRepository $jobRepository, CandidateRepository $candidateRepository ): Response
+    public function index(JobRepository $jobRepository, CandidateRepository $candidateRepository): Response
     {
 
 
@@ -33,21 +33,24 @@ class CandidateJobController extends AbstractController
     }
 
 
-
-
     /**
      * @Route("/{id}/edit", name="candidate_job_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Job $job, EntityManagerInterface $entityManager, CandidateRepository $candidateRepository): Response
     {
 
-        $userid = $this->getUser()->getId(); // id 4
-        $candidate = $candidateRepository->findBy(['user' => ['id' => $userid]])[0];
+        $userid = $this->getUser()->getId();
 
+        if ($candidateRepository->findBy(['user' => ['id' => $userid]]) == []){
+            $this->addFlash('error' , 'Vous devez finaliser votre compte pour pouvoir postuler a une offre' );
+            return $this->redirectToRoute('candidate_new');
+        }
+
+
+
+        $candidate = $candidateRepository->findBy(['user' => ['id' => $userid]])[0];
         $form = $this->createForm(CandidateJobType::class, $job);
         $form->handleRequest($request);
-
-
         $job->addCandidate($candidate);
         $candidate->addApplyJob($job);
 
@@ -56,7 +59,7 @@ class CandidateJobController extends AbstractController
 
             $entityManager->flush();
 
-            $this->addFlash('success', 'Félicitation ! vous venez de postuler à l\'offre "' . $job->getTitle() . '"');
+            $this->addFlash('success', 'Félicitation ! vous venez de postuler à l\'offre "' . $job->getTitle() . '", quand votre candidature aura été acceptée par nos équipes, l\'entreprise recevra un mail avec vos informations.');
 
             return $this->redirectToRoute('candidate_job_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -78,5 +81,40 @@ class CandidateJobController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/search-results", name="search")
+     */
+    public function searchArticle(Request $request, JobRepository $jobRepository)
+    {
+        //Récupérer les données de la recherche
+
+        $search = $request->query->get('search');
+
+        // Faire la recherche sur les donnée de la requete
+
+        $jobs = $jobRepository->searchJob($search);
+
+
+        return $this->render('candidate_job/search.html.twig', [
+            'jobs' => $jobs,
+            'search' => $search,
+
+        ]);
+    }
+
+
+    /**
+     * @Route("/to-apply", name="to_apply" , methods={"GET", "POST"})
+     */
+    public function toApply(Request $request, JobRepository $jobRepository, Job $job):Response
+    {
+        $jobs = $jobRepository->find(69);
+
+        dd($job[]);
+
+        return $this->render('candidate_job/toApply.html.twig', [
+            'jobs' => $jobs
+        ]);
+    }
 
 }

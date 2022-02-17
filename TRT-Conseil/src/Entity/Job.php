@@ -72,6 +72,16 @@ class Job
      */
     private $candidates;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $place;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $description;
+
     public function __construct()
     {
         $this->candidates = new ArrayCollection();
@@ -228,6 +238,30 @@ class Job
       $this->recruiter = $recruiter;
 
       return $this;
+    }
+
+    public function getPlace(): ?string
+    {
+        return $this->place;
+    }
+
+    public function setPlace(string $place): self
+    {
+        $this->place = $place;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
     }
 
 

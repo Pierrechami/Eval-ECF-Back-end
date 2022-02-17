@@ -92,6 +92,14 @@ class JobController extends AbstractController
      */
     public function show(Job $job): Response
     {
+        $userid = $this->getUser()->getId();
+        $jobIdUser = $job->getRecruiter()->getUser()->getId();
+
+        // Empêche un autre recruiter de supprimer un job qui n'est pas a lui
+        if ($userid !== $jobIdUser) {
+            return $this->redirectToRoute('app');
+        }
+
         return $this->render('job/show.html.twig', [
             'job' => $job,
         ]);
@@ -102,6 +110,14 @@ class JobController extends AbstractController
      */
     public function edit(Request $request, Job $job, EntityManagerInterface $entityManager): Response
     {
+        $userid = $this->getUser()->getId();
+        $jobIdUser = $job->getRecruiter()->getUser()->getId();
+
+        // Empêche un autre recruiter de pouvoir modifier le job d'un autre
+        if ($userid !== $jobIdUser) {
+            return $this->redirectToRoute('app');
+        }
+
         $form = $this->createForm(JobType::class, $job);
         $form->handleRequest($request);
 

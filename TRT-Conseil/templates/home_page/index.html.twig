@@ -3,5 +3,19 @@
 {% block title %}Hello HomePageController!{% endblock %}
 
 {% block body %}
-Bonjour je suis la page d'accueil
+    <h1>Page d'accueil</h1>
+
+    {# Message pour avertir les candidats que leur compte n'a pas été accepté #}
+    {% for message in app.flashes('erreur_autorisation_candidat') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {# Message pour avertir les recuteur que leur compte n'a pas été accepté #}
+    {% for message in app.flashes('erreur_autorisation_recruiter') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
 {% endblock %}

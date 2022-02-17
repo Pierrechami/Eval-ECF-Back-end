@@ -5,6 +5,7 @@ namespace App\Controller\CANDIDATE;
 use App\Entity\Candidate;
 use App\Form\CandidateType;
 use App\Repository\CandidateRepository;
+use App\Repository\JobRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Filesystem;
@@ -24,6 +25,13 @@ class CandidateController extends AbstractController
      */
     public function index(CandidateRepository $candidateRepository): Response
     {
+        $user = $this->getUser()->getIsAccepted();
+
+        if ($user == false) {
+            $this->addFlash('erreur_autorisation_candidat', 'Votre compte "'. $this->getUser()->getUserIdentifier() . '" n\'a pas encore été accepté. Nos équipe font au plus vite pour valider votre demande !');
+            return $this->redirectToRoute('app');
+        }
+
         $userId = $this->getUser()->getId();
         $candidate = $candidateRepository->findBy(['user' => ['id' => $userId]]);
 
@@ -35,8 +43,18 @@ class CandidateController extends AbstractController
     /**
      * @Route("/new", name="candidate_new", methods={"GET", "POST"})
      */
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, CandidateRepository $candidateRepository): Response
     {
+
+        $userid = $this->getUser()->getId();
+        $candidatUser = $candidateRepository->findBy(['user' => ['id' => $userid]])[0];
+
+        if ($candidatUser !== []) {
+            return $this->redirectToRoute('app');
+
+        }
+
+
         $candidate = new Candidate();
         $form = $this->createForm(CandidateType::class, $candidate);
         $form->handleRequest($request);
@@ -80,6 +98,13 @@ class CandidateController extends AbstractController
      */
     public function show(Candidate $candidate): Response
     {
+        // faire en sorte qu'un candidate ne puise pas voir les information d'un autre candidate
+        $userid = $this->getUser()->getId(); // 4
+        $idUserCandidate = $candidate->getUser()->getId();
+        if ($userid !== $idUserCandidate) {
+            return $this->redirectToRoute('candidate_index');
+        }
+
 
         return $this->render('candidate/show.html.twig', [
             'candidate' => $candidate,
@@ -89,8 +114,20 @@ class CandidateController extends AbstractController
     /**
      * @Route("/{id}/edit", name="candidate_edit", methods={"GET", "POST"})
      */
-    public function edit(Request $request, Candidate $candidate, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Candidate $candidate, EntityManagerInterface $entityManager, CandidateRepository $candidateRepository, $id): Response
     {
+
+
+        $userid = $this->getUser()->getId();
+        $candidatUser = $candidateRepository->findBy(['user' => ['id' => $userid]])[0];
+        $candidatUserID = $candidatUser->getId();
+
+
+        // Si le candidat veut modifier un id d'un autre candidate alors il est retourné vers la page d'accueil
+        if (intval($id) !== $candidatUserID) {
+            return $this->redirectToRoute('app');
+        }
+
 
         $form = $this->createForm(CandidateType::class, $candidate);
         $form->handleRequest($request);
@@ -145,5 +182,7 @@ class CandidateController extends AbstractController
 
         return $this->redirectToRoute('candidate_index', [], Response::HTTP_SEE_OTHER);
     }
+
+
 
 }
