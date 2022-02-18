@@ -2,8 +2,49 @@
 
 {% block body %}
 
-    {% for job in jobs %}
-        {{ dump(job.getCandidates()) }}
-    {% endfor %}
+    <h1>Liste des annonces pour lesquelles vous avez postulé</h1>
+{% for jobcandidate in jobcandidates %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Titre de l'annonce</th>
+            <th>Description du Poste</th>
+            <th>Lieu</th>
+            <th>Type de contrat</th>
+            <th>Date de début</th>
+            <th>Date de fin</th>
+            <th>Nombre d'heures semaine</th>
+            <th>Salaires</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ jobcandidate.title }}</td>
+            <td>{{ jobcandidate.description }}</td>
+            <td>{{ jobcandidate.place }}</td>
+            <td>{{ jobcandidate.typeContrat }}</td>
+            <td>{{ jobcandidate.startDate ? jobcandidate.startDate|date('d-m-Y') : '' }}</td>
+            <td>{{ jobcandidate.endDate ? jobcandidate.endDate|date('d-m-Y') : 'Pas de date de fin de contrat' }}</td>
+            <td>{{ jobcandidate.time }}</td>
+            <td>{{ jobcandidate.salary }}€</td>
+            <td>
+                <a href="{{ path('candidate_job_edit', {'id': jobcandidate.id}) }}">modifier</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
+
+
+
+{% endfor %}
+
+
+
+    {# pour le job les candidat qui ont postulé
+    {% for job in job0 %}
+        {{ dump(job) }}
+    {% endfor %}
+#}
 {% endblock %}

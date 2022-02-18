@@ -2,29 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a7be17-5dac-441b-9805-5be3b1759b25" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220216091921.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/620ce185d378f.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/candidate_job/search.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/candidate_job/toApply.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/recruiter/toApply.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateJobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateJobController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CONSULTANT/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CONSULTANT/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ENREGISTREMENT/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ENREGISTREMENT/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/JOB/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JOB/JobController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RECRUITEUR/RecruiterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RECRUITEUR/RecruiterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Job.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CandidatType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/JobType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/JobType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/JobRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/JobRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/candidate/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidate/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/candidate_job/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidate_job/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home_page/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home_page/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/job/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/job/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/candidate_job/toApply.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidate_job/toApply.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,6 +191,8 @@
       <workItem from="1644932164873" duration="8914000" />
       <workItem from="1645002852928" duration="1798000" />
       <workItem from="1645004917486" duration="22599000" />
+      <workItem from="1645114779461" duration="12355000" />
+      <workItem from="1645193170712" duration="3223000" />
     </task>
     <servers />
   </component>

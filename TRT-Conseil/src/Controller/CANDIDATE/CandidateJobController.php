@@ -61,6 +61,7 @@ class CandidateJobController extends AbstractController
 
             $this->addFlash('success', 'Félicitation ! vous venez de postuler à l\'offre "' . $job->getTitle() . '", quand votre candidature aura été acceptée par nos équipes, l\'entreprise recevra un mail avec vos informations.');
 
+
             return $this->redirectToRoute('candidate_job_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -104,16 +105,29 @@ class CandidateJobController extends AbstractController
 
 
     /**
-     * @Route("/to-apply", name="to_apply" , methods={"GET", "POST"})
+     * @Route("/to-apply", name="to_apply")
      */
-    public function toApply(Request $request, JobRepository $jobRepository, Job $job):Response
+    public function toApply(CandidateRepository $candidateRepository):Response
     {
-        $jobs = $jobRepository->find(69);
+        $userId = $this->getUser()->getId();
 
-        dd($job[]);
+        $candidat = $candidateRepository->findBy(['user' => ['id'=>$userId]])[0];
+
+        $jobCandidate = $candidat->getApplyJob();
+
+
+// faire pareil pour le job
+        // dans les parametre de mon controller JobRepository $jobRepository,
+   //     $jobs = $jobRepository->findAll();
+       // dd($jobs);
+        // récupere un job
+
+     //   $job0 = $jobRepository->find(68);
+     //   $jobsCandidates = $job0->getCandidates();
 
         return $this->render('candidate_job/toApply.html.twig', [
-            'jobs' => $jobs
+            'jobcandidates' => $jobCandidate, // retour tous les job du candidat auquel il a postulé
+          //  'job0' => $jobsCandidates
         ]);
     }
 

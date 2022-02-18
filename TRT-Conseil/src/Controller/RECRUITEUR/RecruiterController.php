@@ -4,6 +4,8 @@ namespace App\Controller\RECRUITEUR;
 
 use App\Entity\Recruiter;
 use App\Form\RecruiterType;
+use App\Repository\CandidateRepository;
+use App\Repository\JobRepository;
 use App\Repository\RecruiterRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -125,4 +127,35 @@ class RecruiterController extends AbstractController
 
         return $this->redirectToRoute('recruiter_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    /**
+     * @Route("/to-apply", name="to_apply_recruiter")
+     */
+    public function toApplyRecruiter(JobRepository $jobRepository, RecruiterRepository $recruiterRepository):Response
+    {
+        //récupérer l'id du recruiter
+
+        $userId = $this->getUser()->getId(); // 5 id du l'user
+        $RecruiterId = $recruiterRepository->findBy(['user' => ['id' => $userId]])[0]->getId(); // 16 id recruiter
+
+        // Récupérer tout les job qui ont été mis a en ligne par le recruteur
+     //   $jobs = $jobRepository->findBy(['recruiter' => ['id' => $RecruiterId]]);
+        $jobs = $jobRepository->findBy(['recruiter' => ['id' => $RecruiterId]]);
+//dd($jobs);
+
+        // récupérer les candidate qui on postuler au job
+
+       // $JobsPostule = $jobs->getCandidates();
+
+
+
+        // Récupérer les nom de job
+
+        return $this->render('recruiter/toApply.html.twig', [
+       //     'jobs' => $JobsPostule,
+            'NameJobs' => $jobs
+
+        ]);
+    }
+
 }
