@@ -1,58 +1,32 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Job candidats{% endblock %}
 {% block body %}
 
     <h1>Liste des annonces pour lesquelles les candidats ont postulé</h1>
-{% for NameJob in NameJobs %}
+    {% for job in jobs %}
 
-    <p>Pour l'annonce de "<strong>{{ NameJob.title }}</strong>", qui début en date du <strong>{{ NameJob.startDate ? NameJob.startDate|date('d-m-Y') : '' }}</strong>. </p>
-    {% for Nam in NameJob.candidates %}
-        {#  Revoir pour écrire que personne n'a postulé a l'offre
-        {% if NameJob.candidates is empty %}
-            personne na pposs
+        <p>Pour l'annonce de "<strong>{{ job.title }}</strong>", qui début en date du
+            <strong>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</strong>. </p>
+        {% if job.candidates is empty %}
+            <div>
+                <p><strong>Aucun candidat n'a postulé à ce job pour le moment.</strong></p>
+            </div>
         {% endif %}
-        #}
-        <ul>
-            <li>
-                Prenom : {{ Nam.firstName }}
-            </li>
-            <li>
-                Nom : {{ Nam.name }}
-            </li>
-            <li>
-                CV : <a href="{{ asset('uploads/' ~ Nam.cv) }}" target="_blank">Afficher</a>
-            </li>
-        </ul>
+        {% for candidate in job.candidates %}
+            <ul>
+                <li>
+                    Prenom : {{ candidate.firstName }}
+                </li>
+                <li>
+                    Nom : {{ candidate.name }}
+                </li>
+                <li>
+                    CV : <a href="{{ asset('uploads/' ~ candidate.cv) }}" target="_blank">Afficher</a>
+                </li>
+            </ul>
         {% endfor %}
 
-{% endfor %}
-
-
-    {#  ME DONNE LA LISTE DE TOUS LES CANDIDAT QUI ON POSTULER AU JOB DU RECRUITER
-
-  {% for candidate in jobs %}
-
-        <td>{{ candidate.firstName }}</td>
-        <td>{{ candidate.name }}</td>
-        <td><a href="{{ asset('uploads/' ~ candidate.cv) }}" target="_blank">Afficher</a></td>
     {% endfor %}
 
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Prénom : </th>
-                <th>Nom : </th>
-                <th>Cv : </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>{{ candidate.firstName }}</td>
-                <td>{{ candidate.name }}</td>
-                <td><a href="{{ asset('uploads/' ~ candidate.cv) }}" target="_blank">Afficher</a></td>
-            </tbody>
-        </table>
-    {% endfor %}
-    #}
 {% endblock %}

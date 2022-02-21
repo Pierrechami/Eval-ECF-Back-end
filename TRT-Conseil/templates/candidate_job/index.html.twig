@@ -9,6 +9,11 @@
         </div>
     {% endfor %}
 
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
 
     <form action="{{ path('search') }}">
         <input type="text" name="search"  placeholder="ex : Serveur">

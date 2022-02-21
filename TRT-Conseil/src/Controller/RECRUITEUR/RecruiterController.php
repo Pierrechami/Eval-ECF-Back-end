@@ -135,26 +135,16 @@ class RecruiterController extends AbstractController
     {
         //récupérer l'id du recruiter
 
-        $userId = $this->getUser()->getId(); // 5 id du l'user
-        $RecruiterId = $recruiterRepository->findBy(['user' => ['id' => $userId]])[0]->getId(); // 16 id recruiter
+        $userId = $this->getUser()->getId();
+        $RecruiterId = $recruiterRepository->findBy(['user' => ['id' => $userId]])[0]->getId();
 
         // Récupérer tout les job qui ont été mis a en ligne par le recruteur
-     //   $jobs = $jobRepository->findBy(['recruiter' => ['id' => $RecruiterId]]);
         $jobs = $jobRepository->findBy(['recruiter' => ['id' => $RecruiterId]]);
-//dd($jobs);
-
-        // récupérer les candidate qui on postuler au job
-
-       // $JobsPostule = $jobs->getCandidates();
 
 
-
-        // Récupérer les nom de job
 
         return $this->render('recruiter/toApply.html.twig', [
-       //     'jobs' => $JobsPostule,
-            'NameJobs' => $jobs
-
+            'jobs' => $jobs
         ]);
     }
 

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jobs/candidats{% endblock %}
+
+{% block body %}
+
+    <h1>Liste des candidats qui ont postulé pour une ou plusieurs offres.</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Intitulé du job</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for job in jobs %}
+            {% for candidate in job.candidates %}
+                <tr>
+                    <td>{{ candidate.name }}</td>
+                    <td>{{ candidate.firstname }}</td>
+                    <td>{{ job.title }}</td>
+                 <td><a href="{{ path('approving_candidate_job_edit', {'id': job.id , 'cid' : candidate.id}) }}">Approuver la démarche</a></td>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

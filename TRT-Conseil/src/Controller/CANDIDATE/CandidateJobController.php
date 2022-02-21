@@ -54,6 +54,23 @@ class CandidateJobController extends AbstractController
         $job->addCandidate($candidate);
         $candidate->addApplyJob($job);
 
+/*
+
+A VOIR POUR DIRE QUE LE CANDIDAT A DEJA POSTULER A UNE OFFRE
+
+        $nameJob = $job->getTitle();  // serveur
+        $nameCandidat = $candidate->getName(); // candidatechaminade
+        $Nomtt = $nameJob . $nameCandidat;
+       // dd($job.$candidate);
+
+        // Renvoi un message pour dire que le candidat a déjà postuler à cette offre
+        if ($form->isSubmitted() && $form->isValid() && $job.$candidate == $Nomtt) {
+
+            $this->addFlash('error', 'Vous avez déjà postulé a l\'offre ' .$job->getTitle() .'.');
+
+           return $this->redirectToRoute('candidate_job_index', [], Response::HTTP_SEE_OTHER);
+        }
+ */
         // Si le formulaire est valide et que le candidate a postuler
         if ($form->isSubmitted() && $form->isValid() && $job->getToApply() == true) {
 
@@ -69,7 +86,7 @@ class CandidateJobController extends AbstractController
         // Si le formulaire est valide mais que  le candidate n'a pas postulé
         if ($form->isSubmitted() && $form->isValid() && $job->getToApply() == false) {
             $job->removeCandidate($candidate);
-            $entityManager->flush();
+            $entityManager->flush(); // VOIR POUR SUPPRIMER LE FLUSH
 
             return $this->redirectToRoute('candidate_job_index', [], Response::HTTP_SEE_OTHER);
 
