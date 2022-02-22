@@ -3,9 +3,12 @@
 {% block title %}Jobs/candidats{% endblock %}
 
 {% block body %}
-    bonjour
-{# <td> {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-    {{ form_end(form) }}</td> #}
+    {{ form_start(form) }}
+   <div>
+       <p>Approuvez la demande de candidature : {{ form_widget(form.toApply) }} <strong>Attention</strong>, si vous n'approuvez pas la candidature, le recruteur ne recevra pas de mail avec les informations du candidat.</p>
+       <button class="btn">{{ button_label|default('Save') }}</button>
+   </div>
+    {{ form_end(form) }}
+    <p><a href="{{ path('to_apply_job') }}">Retour à la liste</a></p>
+
 {% endblock %}

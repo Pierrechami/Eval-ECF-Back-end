@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a7be17-5dac-441b-9805-5be3b1759b25" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/CONSULTANT/JobsCandidatesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/approvingToApply.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/toApplyJobConsultant.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateJobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateJobController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CONSULTANT/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CONSULTANT/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RECRUITEUR/RecruiterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RECRUITEUR/RecruiterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/candidate_job/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidate_job/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/recruiter/toApply.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recruiter/toApply.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ACCUEIL/HomePageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ACCUEIL/HomePageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CONSULTANT/JobsCandidatesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CONSULTANT/JobsCandidatesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/approvingToApply.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/approvingToApply.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +193,8 @@
       <workItem from="1645114779461" duration="12355000" />
       <workItem from="1645193170712" duration="3309000" />
       <workItem from="1645438126626" duration="6617000" />
-      <workItem from="1645451138392" duration="13599000" />
+      <workItem from="1645451138392" duration="18081000" />
+      <workItem from="1645519349357" duration="3307000" />
     </task>
     <servers />
   </component>

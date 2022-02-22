@@ -5,7 +5,6 @@ namespace App\Controller\CONSULTANT;
 use App\Entity\Candidate;
 use App\Entity\Job;
 use App\Form\CandidateJobType;
-use App\Repository\CandidateRepository;
 use App\Repository\JobRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -62,14 +61,14 @@ class JobsCandidatesController extends AbstractController
         // Si le formulaire est valide mais que  le candidate n'a pas postulé
         if ($form->isSubmitted() && $form->isValid() && $job->getToApply() == false) {
             $job->removeCandidate($cid);
-            $entityManager->flush(); // VOIR POUR SUPPRIMER LE FLUSH
+            $entityManager->flush();
 
             return $this->redirectToRoute('to_apply_job', [], Response::HTTP_SEE_OTHER);
 
         }
 
 
-        return $this->renderForm('candidate_job/edit.html.twig', [
+        return $this->renderForm('user/approvingToApply.html.twig', [
             'job' => $job,
             'form' => $form,
         ]);
