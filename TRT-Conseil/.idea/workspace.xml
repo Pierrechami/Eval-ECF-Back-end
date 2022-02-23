@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a7be17-5dac-441b-9805-5be3b1759b25" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ACCUEIL/HomePageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ACCUEIL/HomePageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CONSULTANT/JobsCandidatesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CONSULTANT/JobsCandidatesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/approvingToApply.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/approvingToApply.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateJobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateJobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ENREGISTREMENT/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ENREGISTREMENT/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RECRUITEUR/RecruiterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RECRUITEUR/RecruiterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home_page/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home_page/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,6 +146,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
       <path value="$PROJECT_DIR$/vendor/doctrine/sql-formatter" />
       <path value="$PROJECT_DIR$/vendor/friendsofphp/proxy-manager-lts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/google-mailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/sendgrid-mailer" />
     </include_path>
   </component>
   <component name="ProjectId" id="24dejcDauKsYeVSyq9dLQT0EmC5" />
@@ -194,7 +204,8 @@
       <workItem from="1645193170712" duration="3309000" />
       <workItem from="1645438126626" duration="6617000" />
       <workItem from="1645451138392" duration="18081000" />
-      <workItem from="1645519349357" duration="3307000" />
+      <workItem from="1645519349357" duration="14218000" />
+      <workItem from="1645548985856" duration="5490000" />
     </task>
     <servers />
   </component>

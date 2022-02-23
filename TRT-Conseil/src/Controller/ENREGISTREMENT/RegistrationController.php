@@ -28,7 +28,16 @@ class RegistrationController extends AbstractController
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
         $user->setIsAccepted(false);
-        $user->setRoles($user->getRoles());
+
+
+        // L'adresse mail de l'administrateur est chaminadepierre.24@gmail.com
+        if ($user->getEmail() == 'chaminadepierre.24@gmail.com'){
+            $user->setRoles(['ROLE_ADMIN']);
+            $user->setIsAccepted(true);
+        } else {
+            $user->setRoles($user->getRoles());
+        }
+       // $user->setRoles($user->getRoles());
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password

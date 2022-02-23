@@ -47,7 +47,7 @@ class CandidateController extends AbstractController
     {
 
         $userid = $this->getUser()->getId();
-        $candidatUser = $candidateRepository->findBy(['user' => ['id' => $userid]])[0];
+        $candidatUser = $candidateRepository->findBy(['user' => ['id' => $userid]]); // [0]
 
         if ($candidatUser !== []) {
             return $this->redirectToRoute('app');

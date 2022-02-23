@@ -44,6 +44,12 @@ class RecruiterController extends AbstractController
      */
     public function new(Request $request, EntityManagerInterface $entityManager, RecruiterRepository $recruiterRepository): Response
     {
+        $user = $this->getUser()->getIsAccepted();
+
+        if ($user == false) {
+            $this->addFlash('erreur_autorisation_recruiter', 'Votre compte "'. $this->getUser()->getUserIdentifier() . '" n\'a pas encore été accepté. Nos équipe font au plus vite pour valider votre demande !');
+            return $this->redirectToRoute('app');
+        }
 
 
         //récupére l'utilisateur courant
@@ -133,9 +139,22 @@ class RecruiterController extends AbstractController
      */
     public function toApplyRecruiter(JobRepository $jobRepository, RecruiterRepository $recruiterRepository):Response
     {
-        //récupérer l'id du recruiter
+
+        $user = $this->getUser()->getIsAccepted();
+
+        if ($user == false) {
+            $this->addFlash('erreur_autorisation_recruiter', 'Votre compte "'. $this->getUser()->getUserIdentifier() . '" n\'a pas encore été accepté. Nos équipe font au plus vite pour valider votre demande !');
+            return $this->redirectToRoute('app');
+        }
+
+
 
         $userId = $this->getUser()->getId();
+
+        if ($recruiterRepository->findBy(['user' => ['id' => $userId]]) == [] )
+        {
+            return $this->redirectToRoute('recruiter_new');
+        }
         $RecruiterId = $recruiterRepository->findBy(['user' => ['id' => $userId]])[0]->getId();
 
         // Récupérer tout les job qui ont été mis a en ligne par le recruteur

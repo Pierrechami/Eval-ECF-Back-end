@@ -25,6 +25,12 @@ class CandidateJobController extends AbstractController
      */
     public function index(JobRepository $jobRepository, CandidateRepository $candidateRepository): Response
     {
+        $user = $this->getUser()->getIsAccepted();
+
+        if ($user == false) {
+            $this->addFlash('erreur_autorisation_candidat', 'Votre compte "'. $this->getUser()->getUserIdentifier() . '" n\'a pas encore été accepté. Nos équipe font au plus vite pour valider votre demande !');
+            return $this->redirectToRoute('app');
+        }
 
 
         return $this->render('candidate_job/index.html.twig', [
@@ -126,6 +132,15 @@ A VOIR POUR DIRE QUE LE CANDIDAT A DEJA POSTULER A UNE OFFRE
      */
     public function toApply(CandidateRepository $candidateRepository):Response
     {
+
+        $user = $this->getUser()->getIsAccepted();
+
+        if ($user == false) {
+            $this->addFlash('erreur_autorisation_candidat', 'Votre compte "'. $this->getUser()->getUserIdentifier() . '" n\'a pas encore été accepté. Nos équipe font au plus vite pour valider votre demande !');
+            return $this->redirectToRoute('app');
+        }
+
+
         $userId = $this->getUser()->getId();
 
         $candidat = $candidateRepository->findBy(['user' => ['id'=>$userId]])[0];
