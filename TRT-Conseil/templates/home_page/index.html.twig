@@ -17,11 +17,12 @@
         </div>
     {% endfor %}
 
-    <p>Page d'accueil</p>
+    <p  class="acc">Page d'accueil</p>
 
     <h1>Liste des jobs à pourvoir</h1>
     <di>
         <h3>Vous avez la possibilité de postuler au différent job proposé en vous créant un compte</h3>
+        <p>Pour avoir plus d'informations sur les jobs a pourvoir, vous devez vous créer un compte candidat</p>
     </di>
     {% for job in jobs %}
         {% if job.isAccepted == true %}
