@@ -16,7 +16,9 @@ class UserType extends AbstractType
            # ->add('email')
           #  ->add('roles')
           #  ->add('password')
-            ->add('is_accepted')
+            ->add('is_accepted' , null, [
+                'label'=>'Cocher la case pour accepter l\'utilisateur'
+           ])
         ;
     }
 

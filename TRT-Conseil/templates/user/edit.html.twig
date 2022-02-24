@@ -3,10 +3,18 @@
 {% block title %}Modifier l'utilisateur{% endblock %}
 
 {% block body %}
-    <h1>Modifier l'utilisateur</h1>
-
-    {{ include('user/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
-    <a href="{{ path('user_index') }}">Retour à la liste</a>
+    <h1>Accepter ou non l'utilisateur</h1>
+{#
+  {{ include('user/_form.html.twig', {'button_label': 'Mettre à jour'}) }} #}
+    {{ form_start(form) }}
+    {# {{ form_widget(form) }} #}
+    <div>
+        <p><strong>Email</strong> : {{ user.email }} <br></p>
+        <p><strong>Accepter l'utilisateur</strong> : {{ form_widget(form.is_accepted) }} </p>
+    </div>
+    <button class="btn btn-primary">{{ button_label|default('Mettre à jour') }}</button>
+    {{ form_end(form) }}
+    <a class=" float-end" href="{{ path('user_index') }}">Retour à la liste</a>
 
     {#  Je ne souhaite pas que le consultant puisse supprimer des utilisateur
     {{ include('user/_delete_form.html.twig') }}

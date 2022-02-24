@@ -23,8 +23,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('candidate_index') }}">Retour</a>
+    <a href="{{ path('candidate_edit', {'id': candidate.id}) }}" class="btn btn-success">Modifier</a>
 
-    <a href="{{ path('candidate_edit', {'id': candidate.id}) }}">Modifier</a>
-
+    <a href="{{ path('candidate_index') }}" class="float-end">Retour</a>
 {% endblock %}

@@ -16,7 +16,7 @@
 
 
         <h1>Liste des annonces qui ont été acceptées par nos équipes :</h1>
-
+        <p>Vous ne pouvez plus modifier vos annonces quand elles ont été acceptées par notre équipe.</p>
         {% for job in jobs %}
             {% if job.isAccepted == true %}
                 <table class="table">
@@ -28,7 +28,7 @@
                         <th>Date de fin</th>
                         <th>Nombre d'heures semaine</th>
                         <th>Salaires mensuel</th>
-                        <th>actions</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -40,8 +40,7 @@
                         <td>{{ job.time }}</td>
                         <td>{{ job.salary }}€</td>
                         <td>
-                            <a href="{{ path('job_show', {'id': job.id}) }}">Afficher</a>
-                            <a href="{{ path('job_edit', {'id': job.id}) }}">Modifier</a>
+                            <a href="{{ path('job_show', {'id': job.id}) }}" class="btn btn-success">Afficher</a>
                         </td>
                     </tr>
                     </tbody>
@@ -59,7 +58,6 @@
 
         {% for job in jobs %}
             {% if job.isAccepted == false %}
-
                 <table class="table">
                     <thead>
                     <tr>
@@ -71,7 +69,8 @@
                         <th>Date de fin</th>
                         <th>Nombre d'heures semaine</th>
                         <th>Salaires</th>
-                        <th>actions</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -85,15 +84,15 @@
                         <td>{{ job.time }}</td>
                         <td>{{ job.salary }}€</td>
                         <td>
-                            <a href="{{ path('job_show', {'id': job.id}) }}">Afficher</a>
-                            <a href="{{ path('job_edit', {'id': job.id}) }}">Modifier</a>
+                            <a href="{{ path('job_show', {'id': job.id}) }}" class="btn btn-success">Afficher</a>
+                        </td>
+                        <td>
+                            <a href="{{ path('job_edit', {'id': job.id}) }}" class="btn btn-danger">Modifier</a>
                         </td>
                     </tr>
                     </tbody>
                 </table>
             {% endif %}
-
-
         {% endfor %}
     {% endif %}
 {% endblock %}

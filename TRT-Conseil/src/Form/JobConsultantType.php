@@ -22,7 +22,7 @@ class JobConsultantType extends AbstractType
 
         $builder
              ->add('is_accepted', null, [
-                   'label' => 'Accepter l\'offre : '
+                   'label' => 'Accepter l\'offre'
                ])
         ;
 

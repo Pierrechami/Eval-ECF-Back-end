@@ -17,13 +17,18 @@
         </div>
     {% endfor %}
 
-    <p  class="acc">Page d'accueil</p>
 
-    <h1>Liste des jobs à pourvoir</h1>
+
+    <p  class="acc">Page d'accueil</p>
     <di>
-        <h3>Vous avez la possibilité de postuler au différent job proposé en vous créant un compte</h3>
-        <p>Pour avoir plus d'informations sur les jobs a pourvoir, vous devez vous créer un compte candidat</p>
+        <p>Vous avez la possibilité de postuler aux différents jobs proposés ainsi que de déposer des annonces en vous créant un compte.</p>
     </di>
+    <h3>Liste des jobs à pourvoir</h3>
+    <form action="{{ path('search-accueil') }}" class="d-flex justify-content-end">
+        <input type="text" name="search"  placeholder="ex : Serveur">
+        <input type="submit"  value="Rechercher">
+    </form>
+
     {% for job in jobs %}
         {% if job.isAccepted == true %}
             <table class="table">
@@ -48,10 +53,9 @@
                 </tr>
                 </tbody>
             </table>
-
         {% endif %}
-
-
+    {% else %}
+        <p>Nous avons actuelement aucun job a vous présenter, mais n'hésité pas revenir pour êtres au courant des nouveauté ! À bientôt !</p>
     {% endfor %}
 
 

@@ -6,9 +6,10 @@
     {{ form_start(form) }}
    <div>
        <p>Approuvez la demande de candidature : {{ form_widget(form.toApply) }} <strong>Attention</strong>, si vous n'approuvez pas la candidature, le recruteur ne recevra pas de mail avec les informations du candidat.</p>
-       <button class="btn">{{ button_label|default('Save') }}</button>
+       <button class="btn btn-primary">{{ button_label|default('Sauvegarder') }}</button>
    </div>
     {{ form_end(form) }}
     <p><a href="{{ path('to_apply_job') }}">Retour à la liste</a></p>
+
 
 {% endblock %}

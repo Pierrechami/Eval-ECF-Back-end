@@ -54,8 +54,7 @@
                     <td>{{ job.time }}</td>
                     <td>{{ job.salary }} €</td>
                     <td>
-                     {#    <a href="{{ path('candidate_job_show', {'id': job.id}) }}">lire</a>#}
-                        <a href="{{ path('candidate_job_edit', {'id': job.id}) }}">Postuler</a>
+                        <a href="{{ path('candidate_job_edit', {'id': job.id}) }}" class="btn btn-success">Postuler</a>
                     </td>
                 </tr>
                 {% endif %}

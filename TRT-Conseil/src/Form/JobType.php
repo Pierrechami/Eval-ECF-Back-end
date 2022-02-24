@@ -49,7 +49,7 @@ class JobType extends AbstractType
                 'label' => 'Date de fin : *si le contrat n\'a pas de date de fin, laissez les valeurs vide.'
             ])
             ->add('time', IntegerType::class, [
-                'label' => 'Nombre d\'heures semaine : '
+                'label' => 'Nombre d\'heures semaine : ',
             ])
             ->add('salary', IntegerType::class, [
                 'label' => 'Salaires mensuel : '

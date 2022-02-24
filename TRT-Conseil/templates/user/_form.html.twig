@@ -1,9 +1,10 @@
 {{ form_start(form) }}
    {# {{ form_widget(form) }} #}
-    Email : {{ user.email }} <br>
-    Accepter l'utilisateur : {{ form_widget(form.is_accepted) }} (Cocher la case pour accepter l'utilisateur)
-<br>
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<div>
+    <p><strong>Email</strong> : {{ user.email }} <br></p>
+    <p><strong>Accepter l'utilisateur</strong> : {{ form_widget(form.is_accepted) }} </p>
+</div>
+<button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
 
 

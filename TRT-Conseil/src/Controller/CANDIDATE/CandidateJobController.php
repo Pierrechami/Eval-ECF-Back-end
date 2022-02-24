@@ -64,6 +64,8 @@ class CandidateJobController extends AbstractController
 
 A VOIR POUR DIRE QUE LE CANDIDAT A DEJA POSTULER A UNE OFFRE
 
+Mais je ne sais pas encore si c une bonne idée de faire ça...........
+
         $nameJob = $job->getTitle();  // serveur
         $nameCandidat = $candidate->getName(); // candidatechaminade
         $Nomtt = $nameJob . $nameCandidat;

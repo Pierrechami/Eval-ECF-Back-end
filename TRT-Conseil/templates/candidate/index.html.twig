@@ -20,8 +20,8 @@
                 <td>{{ candidate.name }}</td>
                 <td>{{ candidate.cv }}</td>
                 <td>
-                    <a href="{{ path('candidate_show', {'id': candidate.id}) }}">Afficher</a>
-                    <a href="{{ path('candidate_edit', {'id': candidate.id}) }}">Modifier</a>
+                    <a href="{{ path('candidate_show', {'id': candidate.id}) }}" class="btn btn-primary">Afficher</a>
+                    <a href="{{ path('candidate_edit', {'id': candidate.id}) }}"class="btn btn-success">Modifier</a>
                 </td>
             </tr>
         {% else %}

@@ -13,7 +13,7 @@
             <td>{{ job.title }}</td>
         </tr>
         <tr>
-            <th>lieu </th>
+            <th>lieu</th>
             <td>{{ job.place }}</td>
         </tr>
         <tr>
@@ -43,9 +43,14 @@
         </tbody>
     </table>
 
-    <a href="{{ path('job_index') }}">Retour à la liste</a>
+    <div>
+        <p>{{ include('job/_delete_form.html.twig') }} </p>
+            <p><a href="{{ path('job_edit', {'id': job.id}) }}" class="btn btn-primary">Modifier le
+                contenue du poste</a></p>
+        <p><a href="{{ path('job_index') }}" class="float-end">Retour à la liste</a></p>
+    </div>
 
-    <a href="{{ path('job_edit', {'id': job.id}) }}">Modifier le contenue du poste</a>
 
-    {{ include('job/_delete_form.html.twig') }}
+
+
 {% endblock %}

@@ -19,7 +19,7 @@
                 <td>{{ consultant.firstName }}</td>
                 <td>{{ consultant.name }}</td>
                 <td>
-                    <a href="{{ path('consultant_edit', {'id': consultant.id}) }}">Modifier</a>
+                    <a href="{{ path('consultant_edit', {'id': consultant.id}) }}" class="btn btn-success">Modifier</a>
                 </td>
             </tr>
         {% else %}
