@@ -18,9 +18,51 @@
         {% endblock %}
     </head>
     <body class="container">
-    {% block herder %}
 
-    {% endblock %}
+
+
+{% block herder %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ path('app') }}">Mes supper recette 👨🏻‍🍳 </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ path('recipe_index') }}">Accées gestion recette</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <p>sex : {{ app.user.sexx }}</p>
+                    <p>Admin : {{ app.user.fullname }}  |
+                        <a  class="link-danger" href="{{ path('logout') }}">Déconnection</a>
+                    </p>
+                {% elseif is_granted('ROLE_PROF') %}
+                    <p>Prof : {{ app.user.fullname }}  |
+                        <a class="link-danger" href="{{ path('logout') }}">Déconnection</a>
+                    </p>
+                {% elseif is_granted('ROLE_USER') %}
+                    <p>sex : {{ app.user.sexx }}</p>
+                    <p>Utilisateur : {{ app.user.fullname }} |
+                        <a class="link-danger" href="{{ path('logout') }}">Déconnection</a>
+                    </p>
+                {% else %}
+                    {{include('login/index.html.twig') }}
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+{% endblock %}
 
         {% block body %}
 

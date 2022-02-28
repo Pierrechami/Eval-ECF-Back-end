@@ -2,6 +2,7 @@
 
 {% block title %}Hello HomePageController!{% endblock %}
 
+
 {% block body %}
     {# Message pour avertir les candidats que leur compte n'a pas été accepté #}
     {% for message in app.flashes('erreur_autorisation_candidat') %}
@@ -16,18 +17,25 @@
             {{ message }}
         </div>
     {% endfor %}
+    <header>
+        <h1 class="accueil-titre">Bienvenue sur notre site </h1>
+        <p  class="accueil-presentation">TRT Conseil est une agence de recrutement spécialisée dans l’hôtellerie et la restauration. Fondée en
+            2014, la société s’est agrandie au fil des ans et possède dorénavant plus de 12 centres dispersés aux
+            quatre coins de la France</p>
+    </header>
 
 
 
-    <p  class="acc">Page d'accueil</p>
-    <di>
+    <h3>Liste des jobs à pourvoir : </h3>
+
+    <div class="infos">
         <p>Vous avez la possibilité de postuler aux différents jobs proposés ainsi que de déposer des annonces en vous créant un compte.</p>
-    </di>
-    <h3>Liste des jobs à pourvoir</h3>
-    <form action="{{ path('search-accueil') }}" class="d-flex justify-content-end">
-        <input type="text" name="search"  placeholder="ex : Serveur">
-        <input type="submit"  value="Rechercher">
-    </form>
+        <form action="{{ path('search-accueil') }}" class="d-flex justify-content-end">
+            <input type="text" name="search"  placeholder="ex : Serveur">
+            <input type="submit"  value="Rechercher">
+        </form>
+    </div>
+
 
     {% for job in jobs %}
         {% if job.isAccepted == true %}
