@@ -150,18 +150,10 @@ Mais je ne sais pas encore si c une bonne idée de faire ça...........
         $jobCandidate = $candidat->getApplyJob();
 
 
-// faire pareil pour le job
-        // dans les parametre de mon controller JobRepository $jobRepository,
-   //     $jobs = $jobRepository->findAll();
-       // dd($jobs);
-        // récupere un job
-
-     //   $job0 = $jobRepository->find(68);
-     //   $jobsCandidates = $job0->getCandidates();
 
         return $this->render('candidate_job/toApply.html.twig', [
-            'jobcandidates' => $jobCandidate, // retour tous les job du candidat auquel il a postulé
-          //  'job0' => $jobsCandidates
+            'jobcandidates' => $jobCandidate, //Retourne tous les jobs du candidat auquel il a postulé
+
         ]);
     }
 

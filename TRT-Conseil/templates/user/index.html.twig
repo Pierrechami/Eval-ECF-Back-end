@@ -24,28 +24,28 @@
         <tbody>
         {% for user in users %}
             {% if user.roles != ["ROLE_ADMIN"] and user.roles != ["ROLE_CONSULTANT"] %}
-            {% if user.isAccepted == false %}
-                <tr>
-                    <td>{{ user.email }}</td>
-                    <td>
-                        {% if user.roles == ["ROLE_ADMIN"] %}
-                        Administrateur
-                        {% elseif user.roles == ["ROLE_CONSULTANT"] %}
-                        Consultant
-                        {% elseif user.roles == ["ROLE_RECRUITEUR"] %}
-                        Recruteur
-                        {% elseif user.roles == ["ROLE_CANDIDAT"] %}
-                        Candidat
-                        {% else %}
-                        {{ user.roles ? user.roles|json_encode : '' }}</td>
-                    {% endif %}
+                {% if user.isAccepted == false %}
+                    <tr>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            {% if user.roles == ["ROLE_ADMIN"] %}
+                            Administrateur
+                            {% elseif user.roles == ["ROLE_CONSULTANT"] %}
+                            Consultant
+                            {% elseif user.roles == ["ROLE_RECRUITEUR"] %}
+                            Recruteur
+                            {% elseif user.roles == ["ROLE_CANDIDAT"] %}
+                            Candidat
+                            {% else %}
+                            {{ user.roles ? user.roles|json_encode : '' }}</td>
+                        {% endif %}
 
-                    <td>{{ user.isAccepted ? 'Oui ✅' : 'Non ❌' }}</td>
-                    <td>
-                        <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-success">Modifier</a>
-                    </td>
-                </tr>
-            {% endif %}
+                        <td>{{ user.isAccepted ? 'Oui ✅' : 'Non ❌' }}</td>
+                        <td>
+                            <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-success">Modifier</a>
+                        </td>
+                    </tr>
+                {% endif %}
             {% endif %}
         {% endfor %}
         </tbody>
@@ -67,7 +67,7 @@
         <tbody>
         {% for user in users %}
             {% if user.roles != ["ROLE_ADMIN"] and user.roles != ["ROLE_CONSULTANT"] %}
-            {% if user.isAccepted == true %}
+                {% if user.isAccepted == true %}
                     <tr>
                         <td>{{ user.email }}</td>
                         <td> {% if user.roles == ["ROLE_ADMIN"] %}
@@ -86,7 +86,7 @@
                             <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-success">Modifier</a>
                         </td>
                     </tr
-            {% endif %}
+                {% endif %}
             {% endif %}
         {% endfor %}
         </tbody>
@@ -171,5 +171,9 @@
         {% endfor %}
         </tbody>
     </table>
+
+    <div>
+        <p><a href="{{ path('app') }}" class=" float-end">Retour à la page d'accueil</a></p>
+    </div>
 
 {% endblock %}

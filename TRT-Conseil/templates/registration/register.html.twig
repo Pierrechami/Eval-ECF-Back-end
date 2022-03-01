@@ -16,6 +16,7 @@
             <p>{{ form_widget(registrationForm.email) }}</p>
             <p>{{ form_label(registrationForm.plainPassword) }} :</p>
             <p>{{ form_widget(registrationForm.plainPassword) }}</p>
+            {{ form_errors(registrationForm.plainPassword) }}
             <p>{{ form_row(registrationForm.roles) }}</p>
             <p>{{ form_label(registrationForm.agreeTerms) }}  {{ form_widget(registrationForm.agreeTerms) }}</p>
 

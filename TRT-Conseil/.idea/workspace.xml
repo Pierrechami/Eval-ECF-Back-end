@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a7be17-5dac-441b-9805-5be3b1759b25" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/public/style/css.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style/css.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateJobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CANDIDATE/CandidateJobController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home_page/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home_page/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/candidate_job/toApply.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidate_job/toApply.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,6 +212,12 @@
       <workItem from="1645722803871" duration="1742000" />
       <workItem from="1645725419937" duration="1567000" />
       <workItem from="1646065313002" duration="644000" />
+      <workItem from="1646068302862" duration="727000" />
+      <workItem from="1646069334042" duration="2347000" />
+      <workItem from="1646073642518" duration="357000" />
+      <workItem from="1646075055726" duration="1438000" />
+      <workItem from="1646121710478" duration="5386000" />
+      <workItem from="1646133734116" duration="10903000" />
     </task>
     <servers />
   </component>

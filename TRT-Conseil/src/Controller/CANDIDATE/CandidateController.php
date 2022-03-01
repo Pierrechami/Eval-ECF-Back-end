@@ -46,6 +46,13 @@ class CandidateController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager, CandidateRepository $candidateRepository): Response
     {
 
+        $user = $this->getUser()->getIsAccepted();
+
+        if ($user == false) {
+            $this->addFlash('erreur_autorisation_candidat', 'Votre compte "'. $this->getUser()->getUserIdentifier() . '" n\'a pas encore été accepté. Nos équipe font au plus vite pour valider votre demande !');
+            return $this->redirectToRoute('app');
+        }
+
         $userid = $this->getUser()->getId();
         $candidatUser = $candidateRepository->findBy(['user' => ['id' => $userid]]); // [0]
 
