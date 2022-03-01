@@ -25,6 +25,13 @@ class JobController extends AbstractController
     public function index(JobRepository $jobRepository, RecruiterRepository $recruiterRepository): Response
     {
 
+        $user = $this->getUser()->getIsAccepted();
+
+        if ($user == false) {
+            $this->addFlash('erreur_autorisation_recruiter', 'Votre compte "'. $this->getUser()->getUserIdentifier() . '" n\'a pas encore été accepté. Nos équipe font au plus vite pour valider votre demande !');
+            return $this->redirectToRoute('app');
+        }
+
                 //récupére l'utilisateur courant
         $utilisateur = $this->getUser();
 
@@ -49,7 +56,12 @@ class JobController extends AbstractController
      */
     public function new(Request $request, EntityManagerInterface $entityManager, RecruiterRepository $recruiterRepository): Response
     {
+        $user = $this->getUser()->getIsAccepted();
 
+        if ($user == false) {
+            $this->addFlash('erreur_autorisation_recruiter', 'Votre compte "'. $this->getUser()->getUserIdentifier() . '" n\'a pas encore été accepté. Nos équipe font au plus vite pour valider votre demande !');
+            return $this->redirectToRoute('app');
+        }
 
         //récupére l'utilisateur courant
        $utilisateur = $this->getUser();

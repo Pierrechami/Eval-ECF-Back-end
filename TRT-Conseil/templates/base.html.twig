@@ -24,101 +24,102 @@
 
 {% block herder %}
 
-{% endblock %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{{ path('app') }}">TRT-Conseil 💼 </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="ok">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ path('app') }}">TRT-Conseil 💼 </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="ok">
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ path('consultant_index') }}">Liste des consultant</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ path('adminregister_admin') }}">Créer un consultant</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ path('user_index') }}">Approuvez les Utilisateurs et les
+                                Jobs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ path('to_apply_job') }}">Liste des postulants</a>
+                        </li>
+                    {% elseif is_granted('ROLE_CANDIDAT') %}
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ path('candidate_index') }}">Mon profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ path('candidate_job_index') }}">Postuler aux offres</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ path('to_apply') }}">Mes candidatures</a>
+                        </li>
+                    {% elseif is_granted('ROLE_RECRUITEUR') %}
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ path('recruiter_index') }}">Mon profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ path('job_new') }}">Poster une annonce</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ path('job_index') }}">Liste de mes offres</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ path('to_apply_recruiter') }}">Liste des postulants</a>
+                        </li>
+                    {% elseif is_granted('ROLE_CONSULTANT') %}
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ path('user_index') }}">Approuvez les Utilisateurs et les
+                                Jobs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ path('to_apply_job') }}">Liste des postulants</a>
+                        </li>
+                    {% endif %}
+
+                </ul>
+
+            </div>
+            <div>
                 {% if is_granted('ROLE_ADMIN') %}
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('consultant_index') }}">Liste des consultant</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('adminregister_admin') }}">Créer un consultant</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('user_index') }}">Approuvez les Utilisateurs et les
-                            Jobs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('to_apply_job') }}">Liste des postulants</a>
-                    </li>
-                {% elseif is_granted('ROLE_CANDIDAT') %}
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('candidate_index') }}">Mon profil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('candidate_job_index') }}">Annonces</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('to_apply') }}">Mes candidatures</a>
-                    </li>
+                    <p><strong>Rôle :</strong> Administrateur </p>
+
+                    <p><strong>Email :</strong> {{ app.user.email }}
+                        <a class="link-danger" href="{{ path('logout') }}">Déconnexion</a>
+                    </p>
                 {% elseif is_granted('ROLE_RECRUITEUR') %}
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('recruiter_index') }}">Mon profil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('job_new') }}">Poster une annonce</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('job_index') }}">Liste de mes offres</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('to_apply_recruiter') }}">Liste des postulants</a>
-                    </li>
+                    <p><strong>Rôle :</strong> Recruteur </p>
+
+                    <p><strong>Email :</strong> {{ app.user.email }}
+                        <a class="link-danger" href="{{ path('logout') }}">Déconnexion</a>
+                    </p>
                 {% elseif is_granted('ROLE_CONSULTANT') %}
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('user_index') }}">Approuvez les Utilisateurs et les
-                            Jobs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('to_apply_job') }}">Liste des postulants</a>
-                    </li>
+                    <p><strong>Rôle :</strong> Consultant </p>
+
+                    <p><strong>Email :</strong> {{ app.user.email }}
+                        <a class="link-danger" href="{{ path('logout') }}">Déconnexion</a>
+                    </p>
+                {% elseif is_granted('ROLE_CANDIDAT') %}
+                    <p><strong>Rôle :</strong> Candidate </p>
+
+                    <p><strong>Email :</strong> {{ app.user.email }}
+                        <a class="link-danger" href="{{ path('logout') }}">Déconnexion</a>
+                    </p>
+
+
+                {% else %}
+                    <p><a href="{{ path('login') }}" class="btn btn-secondary ">Se connecter</a> <a
+                                href="{{ path('app_register') }}" class="btn btn-secondary">Créer un compte</a></p>
                 {% endif %}
-
-            </ul>
-
+            </div>
         </div>
-        <div>
-            {% if is_granted('ROLE_ADMIN') %}
-                <p><strong>Rôle :</strong> Administrateur </p>
-
-                <p><strong>Email :</strong> {{ app.user.email }}
-                    <a class="link-danger" href="{{ path('logout') }}">Déconnexion</a>
-                </p>
-            {% elseif is_granted('ROLE_RECRUITEUR') %}
-                <p><strong>Rôle :</strong> Recruteur </p>
-
-                <p><strong>Email :</strong> {{ app.user.email }}
-                    <a class="link-danger" href="{{ path('logout') }}">Déconnexion</a>
-                </p>
-            {% elseif is_granted('ROLE_CONSULTANT') %}
-                <p><strong>Rôle :</strong> Consultant </p>
-
-                <p><strong>Email :</strong> {{ app.user.email }}
-                    <a class="link-danger" href="{{ path('logout') }}">Déconnexion</a>
-                </p>
-            {% elseif is_granted('ROLE_CANDIDAT') %}
-                <p><strong>Rôle :</strong> Candidate </p>
-
-                <p><strong>Email :</strong> {{ app.user.email }}
-                    <a class="link-danger" href="{{ path('logout') }}">Déconnexion</a>
-                </p>
+    </nav>
 
 
-            {% else %}
-                <p><a href="{{ path('login') }}" class="btn btn-secondary ">Se connecter</a> <a
-                            href="{{ path('app_register') }}" class="btn btn-secondary">Créer un compte</a></p>
-            {% endif %}
-        </div>
-    </div>
-</nav>
-
+{% endblock %}
 
 {% block body %}
 
