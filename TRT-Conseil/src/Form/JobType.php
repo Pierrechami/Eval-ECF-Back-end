@@ -42,11 +42,19 @@ class JobType extends AbstractType
             ])
             ->add('start_date', DateType::class, [
                 'widget' => 'choice',
-                'label' => 'Date de début : ',
-                'data' => new \DateTime("now")
+                'label' => 'Date de début : (Jours - Mois - Années)',
+                'view_timezone' => 'Europe/Paris',
+                'data' => new \DateTime("now"),
+                'format'    => 'ddMyyyy',
+
+
             ])
-            ->add('end_date', null, [
-                'label' => 'Date de fin : *si le contrat n\'a pas de date de fin, laissez les valeurs vide.'
+            ->add('end_date', DateType::class, [
+                'label' => 'Date de fin : (Jours - Mois - Années)  *si le contrat n\'a pas de date de fin, laissez les valeurs vide.',
+                'view_timezone' => 'Europe/Paris',
+                'data' => new \DateTime("now"),
+                'format'    => 'ddMyyyy',
+
             ])
             ->add('time', IntegerType::class, [
                 'label' => 'Nombre d\'heures semaine : ',

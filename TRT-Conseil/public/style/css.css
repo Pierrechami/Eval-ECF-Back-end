@@ -1,3 +1,4 @@
+
 /*Page d'accueil*/
 .accueil-titre {
     text-align: center;
@@ -5,12 +6,12 @@
 }
 
 
-
-/* Page register */
+/* Page register / log*/
 
 .compte{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    bottom: 0;
 }

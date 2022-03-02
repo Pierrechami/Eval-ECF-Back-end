@@ -21,7 +21,7 @@
                     <td>{{ candidate.name }}</td>
                     <td>{{ candidate.firstname }}</td>
                     <td>{{ job.title }}</td>
-                 <td><a href="{{ path('approving_candidate_job_edit', {'id': job.id , 'cid' : candidate.id}) }}">Approuver la démarche</a></td>
+                 <td><a href="{{ path('approving_candidate_job_edit', {'id': job.id , 'cid' : candidate.id}) }}" class="btn btn-primary">Approuver la démarche</a></td>
                 </tr>
             {% endfor %}
         {% endfor %}

@@ -1,4 +1,4 @@
- {% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {# ... #}
 
@@ -6,26 +6,28 @@
     {% if error %}
         <div class="d-flex justify-content-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-    <div class="container">
-    <div class="row">
-        <div class="col-md-5 compte">
-            <h1>Je me connecte ! 👏</h1>
-        </div>
-        <div class="col-md-7 compte">
-            <form action="{{ path('login') }}" method="post">
-                <label for="username">Email:</label>
-                <input type="text" id="username" name="_username" value="{{ last_username }}"/>
 
-                <label for="password">Mot de passe:</label>
-                <input type="password" id="password" name="_password"/>
+    <div class="container jsp">
+        <div class="row ">
+            <div class="col-md-5 compte">
+                <h1>Je me connecte ! 👏</h1>
+            </div>
+            <div class="col-md-7 compte">
+                <form action="{{ path('login') }}" method="post">
+                    <label for="username">Email:</label>
+                    <input type="text" id="username" name="_username" value="{{ last_username }}"/>
 
-                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                    <label for="password">Mot de passe:</label>
+                    <input type="password" id="password" name="_password"/>
+
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
 
-                <input type="hidden" name="_target_path" value="{{ path('app') }}"/>
+                    <input type="hidden" name="_target_path" value="{{ path('app') }}"/>
 
-                <button type="submit">Se connecter</button>
-            </form>
+                    <button type="submit" class="float-end">Se connecter</button>
+                </form>
+            </div>
         </div>
     </div>
 

@@ -56,6 +56,7 @@ class JobController extends AbstractController
      */
     public function new(Request $request, EntityManagerInterface $entityManager, RecruiterRepository $recruiterRepository): Response
     {
+
         $user = $this->getUser()->getIsAccepted();
 
         if ($user == false) {

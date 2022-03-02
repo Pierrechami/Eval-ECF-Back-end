@@ -17,54 +17,104 @@
             {{ message }}
         </div>
     {% endfor %}
-    <header>
+    <header class="mt-4">
         <h1 class="accueil-titre">Bienvenue sur notre site </h1>
-        <p  class="accueil-presentation">TRT Conseil est une agence de recrutement spécialisée dans l’hôtellerie et la restauration. Fondée en
-            2014, la société s’est agrandie au fil des ans et possède dorénavant plus de 12 centres dispersés aux
-            quatre coins de la France</p>
     </header>
 
+    <section class="mt-4 ">
+
+            <div class="row ">
+                    <img class="col-lg-5 float-end" src="https://media.istockphoto.com/photos/smiling-restaurant-staff-standing-against-white-background-picture-id909303600?k=20&m=909303600&s=612x612&w=0&h=DbwpPNIOfwT8QzLtWibDhNn0ScakGi4DTUYqj2sQP04=">
+
+                <div class="col-lg-7 d-flex justify-content-center align-items-center">
+                    <p class="text-justify">TRT Conseil est une agence de recrutement spécialisée dans l’hôtellerie et la
+                        restauration. Fondée en
+                        2014, la société s’est agrandie au fil des ans et possède dorénavant plus de 12 centres dispersés aux
+                        quatre coins de la France <br> <br>
+                    <strong>Lorem Ipsum </strong>est simplement un faux texte de l'industrie de l'impression et de la composition. Le
+                        Lorem Ipsum est le texte factice standard de l'industrie depuis les années 1500, lorsqu'un
+                        imprimeur inconnu a pris une galère de caractères et l'a brouillé pour en faire un livre de
+                        spécimens de caractères. Il a survécu non seulement à cinq siècles, mais aussi au saut dans la
+                        composition électronique, restant essentiellement inchangé. Il a été popularisé dans les années
+                        1960 avec la sortie de feuilles Letraset contenant des passages de Lorem Ipsum, et plus
+                        récemment avec des logiciels de publication assistée par ordinateur comme Aldus PageMaker
+                        comprenant des versions de Lorem Ipsum.</p>
+                </div>
 
 
-    <h3>Liste des jobs à pourvoir : </h3>
+            <div class="row mt-5">
+                <div class="col-xs-12">
+                    <h3 class="ml-5">Liste des jobs à pourvoir  </h3>
 
-    <div class="infos">
-        <p>Vous avez la possibilité de postuler aux différents jobs proposés ainsi que de déposer des annonces en vous créant un compte.</p>
-        <form action="{{ path('search-accueil') }}" class="d-flex justify-content-end">
-            <input type="text" name="search"  placeholder="ex : Serveur">
-            <input type="submit"  value="Rechercher">
-        </form>
-    </div>
-
-
-    {% for job in jobs %}
-        {% if job.isAccepted == true %}
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Titre de l'annonce</th>
-                    <th>Type de contrat</th>
-                    <th>Date de début</th>
-                    <th>Date de fin</th>
-                    <th>Nombre d'heures semaine</th>
-                    <th>Salaires mensuel</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>{{ job.title }}</td>
-                    <td>{{ job.typeContrat }}</td>
-                    <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
-                    <td>{{ job.endDate ? job.endDate|date('d-m-Y') : 'Pas de date de fin de contrat' }}</td>
-                    <td>{{ job.time }}</td>
-                    <td>{{ job.salary }}€</td>
-                </tr>
-                </tbody>
-            </table>
-        {% endif %}
-    {% else %}
-        <p>Nous avons actuelement aucun job a vous présenter, mais n'hésité pas revenir pour êtres au courant des nouveauté ! À bientôt !</p>
-    {% endfor %}
+                    <div class="infos">
+                        <p>Vous avez la possibilité de postuler aux différents jobs proposés ainsi que de déposer des
+                            annonces en vous créant un compte.</p>
+                        <form action="{{ path('search-accueil') }}" class="d-flex justify-content-end">
+                            <input type="text" name="search" placeholder="ex : Serveur">
+                            <input type="submit" value="Rechercher">
+                        </form>
+                    </div>
 
 
+                    {% for job in jobs %}
+                        {% if job.isAccepted == true %}
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Titre de l'annonce</th>
+                                    <th>Type de contrat</th>
+                                    <th>Date de début</th>
+                                    <th>Date de fin</th>
+                                    <th>Nombre d'heures semaine</th>
+                                    <th>Salaires mensuel</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{{ job.title }}</td>
+                                    <td>{{ job.typeContrat }}</td>
+                                    <td>{{ job.startDate ? job.startDate|date('d-m-Y') : '' }}</td>
+                                    <td>{{ job.endDate ? job.endDate|date('d-m-Y') : 'Pas de date de fin de contrat' }}</td>
+                                    <td>{{ job.time }}</td>
+                                    <td>{{ job.salary }}€</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        {% endif %}
+                    {% else %}
+                        <p>Nous avons actuelement aucun job a vous présenter, mais n'hésité pas revenir pour êtres au
+                            courant des nouveauté ! À bientôt !</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
+
+
+
+{% block footer %}
+    <footer class="footer mt-5">
+        <HR WIDTH="75%" class="mx-auto">
+        <div class="row ">
+            <div class="col-xs-12 d-flex justify-content-center">
+                <p><i>Retrouvez-nous sur nos différents réseau sociaux</i></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 d-flex justify-content-evenly">
+                <a href="https://www.facebook.com" target="_blank"> <img width="50px" height="50px" src="{{ asset('Image/logo-fb.png') }}"></a>
+                <a href="https://twitter.com" target="_blank"> <img width="50px" height="50px" src="{{ asset('Image/logo-twitter.png') }}"></a>
+                <a href="https://www.snapchat.com/" target="_blank"> <img width="70px" height="50px" src="{{ asset('Image/logo-snap.png') }}"></a>
+            </div>
+        </div>
+        <HR WIDTH="75%" class="mx-auto">
+        <div class="row ">
+            <div class="col-xs-12 d-flex justify-content-center">
+                <p class="exemple" >Copyright © 2022 TRT-Conseil</p>
+            </div>
+        </div>
+    </footer>
 {% endblock %}
