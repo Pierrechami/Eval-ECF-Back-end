@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a7be17-5dac-441b-9805-5be3b1759b25" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/Image/logo-fb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Image/logo-snap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Image/logo-twitter.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/style/css.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style/css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/JOB/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JOB/JobController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/JobType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/JobType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home_page/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home_page/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/job/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/approvingToApply.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/approvingToApply.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/toApplyJobConsultant.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/toApplyJobConsultant.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../diagramme/Diagramme de séquence Candidat .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../diagramme/Zoning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../diagramme/diagramme UML.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../diagramme/diagramme cas d'utilisation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../diagramme/diagramme de class UML.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../diagramme/diagramme de séquence Recruteur .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../diagramme/wireframe:mockups.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +223,7 @@
       <workItem from="1646133734116" duration="13962000" />
       <workItem from="1646154509639" duration="6473000" />
       <workItem from="1646212410816" duration="10982000" />
-      <workItem from="1646233108850" duration="5109000" />
+      <workItem from="1646233108850" duration="12511000" />
     </task>
     <servers />
   </component>

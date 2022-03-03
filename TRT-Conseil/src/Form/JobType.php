@@ -49,11 +49,9 @@ class JobType extends AbstractType
 
 
             ])
-            ->add('end_date', DateType::class, [
+            ->add('end_date', null, [
                 'label' => 'Date de fin : (Jours - Mois - Années)  *si le contrat n\'a pas de date de fin, laissez les valeurs vide.',
                 'view_timezone' => 'Europe/Paris',
-                'data' => new \DateTime("now"),
-                'format'    => 'ddMyyyy',
 
             ])
             ->add('time', IntegerType::class, [
