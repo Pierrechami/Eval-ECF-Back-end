@@ -1,45 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8a19ec8-d10a-4db6-9e0a-ac8348fd48f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204073126.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204073746.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204074117.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204074406.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204074750.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204074918.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204082328.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204082524.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/migrations/Version20220204083258.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Controller/HomePageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Controller/LoginController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Entity/Admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Entity/Candidate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Entity/Consultant.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Entity/Job.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Entity/Recruiter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Entity/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Repository/AdminRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Repository/CandidateRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Repository/ConsultantRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Repository/JobRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Repository/RecruiterRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/src/Repository/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/templates/home_page/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TRT-Conseil/templates/login/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TRT-Conseil/.env" beforeDir="false" afterPath="$PROJECT_DIR$/TRT-Conseil/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TRT-Conseil/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/TRT-Conseil/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TRT-Conseil/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/TRT-Conseil/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TRT-Conseil/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/TRT-Conseil/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TRT-Conseil/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/TRT-Conseil/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagramme/diagramme UML.png" beforeDir="false" afterPath="$PROJECT_DIR$/diagramme/diagramme UML.png" afterDir="false" />
-    </list>
+    <list default="true" id="c8a19ec8-d10a-4db6-9e0a-ac8348fd48f9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
+    <pharConfigPath>$PROJECT_DIR$/TRT-Conseil/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
@@ -47,6 +16,119 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/runtime" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/google-mailer" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/sendgrid-mailer" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/friendsofphp/proxy-manager-lts" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/security-guard" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/amqp-messenger" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/redis-messenger" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/webpack-encore-bundle" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/doctrine-messenger" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/proxy-manager-bridge" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/web-link" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/notifier" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/intl" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/password-hasher" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/messenger" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/composer" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/TRT-Conseil/vendor/symfony/dotenv" />
+    </include_path>
   </component>
   <component name="ProjectId" id="24Y4XldrTN36n4yStvUHBHvcCnT" />
   <component name="ProjectViewState">
@@ -72,6 +154,7 @@
       <updated>1643794242257</updated>
       <workItem from="1643794248495" duration="741000" />
       <workItem from="1643808052448" duration="6780000" />
+      <workItem from="1646401935345" duration="748000" />
     </task>
     <servers />
   </component>

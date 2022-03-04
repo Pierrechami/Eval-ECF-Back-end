@@ -145,7 +145,12 @@ Mais je ne sais pas encore si c une bonne idée de faire ça...........
 
         $userId = $this->getUser()->getId();
 
-        $candidat = $candidateRepository->findBy(['user' => ['id'=>$userId]])[0];
+        if ($candidateRepository->findBy(['user' => ['id'=>$userId]]) == []){
+            return $this->redirectToRoute('candidate_index');
+        }
+       $candidat = $candidateRepository->findBy(['user' => ['id'=>$userId]])[0];
+
+
 
         $jobCandidate = $candidat->getApplyJob();
 
