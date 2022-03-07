@@ -52,7 +52,7 @@ class JobsCandidatesController extends AbstractController
             $entityManager->flush();
 
             $email = (new Email());
-            $email->from('chaminadepierre.24@gmail.com')
+            $email->from('ecf-back@trt-conseil.fr')
                 ->to($cid->getUser()->getEmail())
                 ->subject('Nouveau postulant' . $job->getTitle())
                 ->html('<h1>Bonne nouvelle, un nouveau candidat à postulé a votre offre de ' . $job->getTitle() . '</h1>
@@ -68,7 +68,6 @@ Cordialemnt
 L\'équipe TRT-CONSEIL');
 
             $mailer->send($email);
-
 
               return $this->redirectToRoute('to_apply_job', [], Response::HTTP_SEE_OTHER);
         }
