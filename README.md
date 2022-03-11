@@ -34,6 +34,10 @@ php bin/console doctrine:database:create
 # Création des tables en base de données (migrations)
 
 php bin/console doctrine:migrations:migrate
+
+# Si problèmes avec les migrations 
+
+php bin/console doctrine:schema:update --force
  ```
 
 ##Utilisation

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8a19ec8-d10a-4db6-9e0a-ac8348fd48f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Evaluation écrite/Evaluation back-end.pages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,6 +168,9 @@
       <workItem from="1646401935345" duration="748000" />
       <workItem from="1646403389772" duration="3144000" />
       <workItem from="1646688223171" duration="872000" />
+      <workItem from="1646760458888" duration="69000" />
+      <workItem from="1646900921630" duration="693000" />
+      <workItem from="1647005895654" duration="476000" />
     </task>
     <servers />
   </component>
